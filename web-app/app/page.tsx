@@ -1,15 +1,66 @@
 "use client";
 import Image from "next/image";
 import { useState } from 'react';
+import PressButton from "./components/PressButton";
+
+function clamp(value:number, min:number, max:number) {
+  return Math.min(Math.max(value, min), max);
+}
+
 
 export default function Home() {
+  // Set-up default states for the globe
   const [luminosity, setLuminosity] = useState(100);
-  const [rotation, setRotation] = useState(1);
-  const [dataSource, setDataSource] = useState("Sensor A");
+  const [rotation, setRotation] = useState(0);
+  const [volume, setVolume] = useState(0);
+  const [hapticEnabled, setHapticEnabled] = useState(false);
+  const [dataSource, setDataSource] = useState("Weather");
+
+  // Subscribe to Mqtt and pull variables temp and Uptime
+  const [uptime, setUptime] = useState("0s");
+  const [temperature, setTemperature] = useState("-- °C");
+
+  const publishSettings = async () => {
+
+    let direction = 0;
+    let speed = Math.abs(rotation);
+
+    if (rotation > 0) direction = 1;
+    if (rotation < 0) direction = 2;
+
+    await fetch("/api/publish", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        luminosity,
+        speed,
+        direction,
+        volume,
+        haptic: hapticEnabled ? 1 : 0
+      }),
+    });
+
+  };
+
+  // Weather API trigger
+  const triggerWeatherScript = async () => {
+    try {
+      const res = await fetch("/api/run-weather", {
+        method: "POST",
+      });
+
+      const data = await res.json();
+      console.log("Server response:", data);
+    } catch (err) {
+      console.error("Error triggering weather script:", err);
+    }
+  };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <div className="flex items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+      <main className="flex w-full max-w-3xl flex-col gap-6 py-20 px-16 bg-white dark:bg-black">
         <Image
           className="dark:invert"
           src="/next.svg"
@@ -27,53 +78,145 @@ export default function Home() {
         <div className="flex flex-col gap-2">
           <label>Current API: {dataSource}</label>
           <div className="flex gap-4">
-            <button
+            <PressButton
               onClick={() => setDataSource("Sensor A")}
               className="px-4 py-2 bg-blue-500 text-white rounded"
             >
-              Sensor A
-            </button>
+              Sensor P
+            </PressButton>
 
-            <button
-              onClick={() => setDataSource("Weather")}
-              className="px-4 py-2 bg-green-500 text-white rounded"
-            >
-              Weather
-            </button>
+            <PressButton
+              onClick={async () => {
+                setDataSource("Weather");
+                await triggerWeatherScript();
+              }}
+                className="px-4 py-2 bg-green-500 text-white rounded"
+              >
+                Weather
+            </PressButton>
 
-            <button
+            <PressButton
               onClick={() => setDataSource("Stripe")}
               className="px-4 py-2 bg-purple-500 text-white rounded"
             >
               Stripe
-            </button>
+            </PressButton>
           </div>
         </div>
 
-        { /* Luminosity Input */}
+        <PressButton
+          onClick={publishSettings}
+          className="px-6 py-3 bg-red-500 text-white rounded text-lg"
+        >
+          Publish Settings To Globe
+        </PressButton>
+
+        {/* Luminosity Input */}
         <div className="flex flex-col gap-2">
-          <label>Luminosity (%): {luminosity}</label>
+         <label>Luminosity (Global %): {luminosity.toFixed(3)}</label>
+
           <input
             type="range"
             min="0"
             max="100"
+            step="0.001"
             value={luminosity}
             onChange={(e) => setLuminosity(Number(e.target.value))}
+          />
+
+          <input
+            type="number"
+            min="0"
+            max="100"
+            step="0.001"
+            value={luminosity}
+            onChange={(e) => setLuminosity(clamp(Number(e.target.value), 0, 100))}
+            className="border p-1 rounded w-32"
           />
         </div>
 
         {/* Rotation Input */}
         <div className="flex flex-col gap-2">
-          <label>Rotation (per minute):</label>
+          <label>Rotation (%): {rotation.toFixed(3)}</label>
+
+          <input
+            type="range"
+            min="0"
+            max="100"
+            step="0.001"
+            value={rotation}
+            onChange={(e) => setRotation(Number(e.target.value))}
+          />
+
           <input
             type="number"
-            value={rotation}
             min="0"
-            onChange={(e) => setRotation(Number(e.target.value))}
-            className="border p-2 rounded"
+            max="100"
+            step="0.001"
+            value={rotation}
+            onChange={(e) => setRotation(clamp(Number(e.target.value), 0, 100))}
+            className="border p-1 rounded w-32"
+          />
+        </div>
+        <PressButton
+          onClick={() => setRotation(Number(0))}
+          className="px-4 py-2 bg-yellow-500 text-white rounded"
+        >
+          Stop Rotation
+        </PressButton>
+        </div>
+
+        {/* Volume Input */}
+        <div className="flex flex-col gap-2">
+         <label>Volume (%): {volume}</label>
+
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value={volume}
+            onChange={(e) => setVolume(Number(e.target.value))}
+          />
+
+          <input
+            type="number"
+            min="0"
+            max="100"
+            value={volume}
+            onChange={(e) => setVolume(clamp(Number(e.target.value), 0, 100))}
+            className="border p-1 rounded w-32"
           />
         </div>
 
+        {/* Haptic Feedback Toggle */}
+        <div className="flex flex-col gap-2">
+          <label>Haptic Feedback</label>
+
+          <PressButton
+            onClick={() => setHapticEnabled(!hapticEnabled)}
+            className={`px-4 py-2 rounded text-white ${
+              hapticEnabled ? "bg-green-500" : "bg-gray-500"
+            }`}
+          >
+            {hapticEnabled ? "Enabled" : "Disabled"}
+          </PressButton>
+        </div>
+
+        {/* Device Status */}
+        <div className="flex flex-col gap-2 border p-4 rounded bg-zinc-100 dark:bg-zinc-900">
+          <h2 className="text-lg font-semibold">Device Status</h2>
+
+          <div className="flex justify-between">
+            <span>Temperature:</span>
+            <span>{temperature}</span>
+          </div>
+
+          <div className="flex justify-between">
+            <span>Uptime:</span>
+            <span>{uptime}</span>
+          
+
+          </div>
           <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
             Luminosity: {" "}
             <a
