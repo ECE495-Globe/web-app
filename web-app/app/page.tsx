@@ -34,6 +34,8 @@ export default function Home() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        type: "control",
+        source: dataSource,
         luminosity,
         speed,
         direction,
@@ -41,7 +43,20 @@ export default function Home() {
         haptic: hapticEnabled ? 1 : 0
       }),
     });
+  };
 
+  // Day-Night API trigger
+  const triggerDayNightScript = async () => {
+    try {
+      const res = await fetch("/api/run-day-night", {
+        method: "POST",
+      });
+
+      const data = await res.json();
+      console.log("Server response:", data);
+    } catch (err) {
+      console.error("Error triggering Day-Night script:", err);
+    }
   };
 
   // Weather API trigger
@@ -55,6 +70,20 @@ export default function Home() {
       console.log("Server response:", data);
     } catch (err) {
       console.error("Error triggering weather script:", err);
+    }
+  };
+
+  // Stripe API trigger
+  const triggerStripeScript = async () => {
+    try {
+      const res = await fetch("/api/run-stripe", {
+        method: "POST",
+      });
+
+      const data = await res.json();
+      console.log("Server response:", data);
+    } catch (err) {
+      console.error("Error triggering stripe script:", err);
     }
   };
 
@@ -79,10 +108,13 @@ export default function Home() {
           <label>Current API: {dataSource}</label>
           <div className="flex gap-4">
             <PressButton
-              onClick={() => setDataSource("Sensor A")}
+              onClick={async() => {
+                setDataSource("Day-Night");
+                await triggerDayNightScript();
+              }}
               className="px-4 py-2 bg-blue-500 text-white rounded"
             >
-              Sensor P
+              Day-Night
             </PressButton>
 
             <PressButton
@@ -92,11 +124,14 @@ export default function Home() {
               }}
                 className="px-4 py-2 bg-green-500 text-white rounded"
               >
-                Weather
+              Weather
             </PressButton>
 
             <PressButton
-              onClick={() => setDataSource("Stripe")}
+              onClick={async () => {
+                setDataSource("Stripe");
+                await triggerStripeScript();
+              }}
               className="px-4 py-2 bg-purple-500 text-white rounded"
             >
               Stripe
