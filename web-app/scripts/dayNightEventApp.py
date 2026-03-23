@@ -2,12 +2,13 @@ import requests
 import json
 import subprocess
 
-# Reuse your coordinate dictionaries
 from mapToCoordinates import countries, states, provinces
+
 
 def chunk_list(data, size):
     for i in range(0, len(data), size):
         yield data[i:i+size]
+
 
 # Combine all locations
 locations = {**countries, **states, **provinces}
@@ -20,20 +21,23 @@ daynight_data = {
     "data": {}
 }
 
-BATCH_SIZE = 50  # 5 calls total for ~250 locations
+BATCH_SIZE = 50 # Tried 200, was way to big
 
-# Optional: convert day/night RGB (for LEDs or maps)
+
 def daynight_to_rgb(is_day):
-    if is_day == 1:
-        return [255, 200, 0]  # soft daylight (warm white)
-    else:
-        return [0, 0, 150]    # dark blue (night)
+    return [255, 200, 0] if is_day == 1 else [0, 0, 150]
 
 
-for location, (lat, lon) in locations.items():
+# BATCH LOOP
+for chunk in chunk_list(location_items, BATCH_SIZE):
+
+    keys = [item[0] for item in chunk]
+    lats = [item[1][0] for item in chunk]
+    lons = [item[1][1] for item in chunk]
+
     params = {
-        "latitude": lat,
-        "longitude": lon,
+        "latitude": lats,
+        "longitude": lons,
         "current": "is_day"
     }
 
@@ -42,17 +46,22 @@ for location, (lat, lon) in locations.items():
         response.raise_for_status()
         data = response.json()
     except Exception as e:
-        print(f"Request failed for {location}: {e}")
+        print(f"Batch request failed: {e}")
         continue
 
-    is_day = data["current"]["is_day"]
-    rgb = daynight_to_rgb(is_day)
-
-    daynight_data["data"][location] = rgb
+    # Handle batched response (list of results)
+    for i, location in enumerate(keys):
+        try:
+            is_day = data[i]["current"]["is_day"]
+            rgb = daynight_to_rgb(is_day)
+            daynight_data["data"][location] = rgb
+        except Exception as e:
+            print(f"Error processing {location}: {e}")
 
 
 # Send full dataset
 payload = json.dumps(daynight_data)
 
-subprocess.run(["python3", "Publish.py", payload])
+
+# subprocess.run(["python3", "Publish.py", payload])
 print("Day/Night data published to MQTT. Payload:", payload)

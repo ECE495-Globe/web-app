@@ -19,9 +19,9 @@ provinces = {
     "ON": (43.6532, -79.3832),   # Ontario – Toronto
     "QC": (46.8139, -71.2080),   # Québec – Québec City
     "NB": (45.9636, -66.6431),   # New Brunswick – Fredericton
+    "NL": (47.5615, -52.7126),   # Newfoundland and Labrador – St. John’s
     "NS": (44.6488, -63.5752),   # Nova Scotia – Halifax
     "PE": (46.2382, -63.1311),   # Prince Edward Island – Charlottetown
-    "NL": (47.5615, -52.7126),   # Newfoundland and Labrador – St. John’s
 
 }
 
