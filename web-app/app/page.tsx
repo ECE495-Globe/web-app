@@ -335,30 +335,31 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={`rotation-pill ${rotationEnabled ? "" : "rotation-pill-off"}`}>
-          <div className="rotation-slider-wrap">
-            <div className="rotation-label-row">
-              <span className="rotation-label">Rotation Speed</span>
-              <button
-                type="button"
-                onClick={toggleRotation}
-                className={`rotation-toggle ${rotationEnabled ? "" : "rotation-toggle-off"}`}
-                aria-label={rotationEnabled ? "Turn rotation off" : "Turn rotation on"}
-                title={rotationEnabled ? "Mute rotation styling" : "Enable rotation styling"}
-                style={rotationToggleStyle}
-              >
-                <svg viewBox="0 0 24 24" className="rotation-icon" aria-hidden="true">
-                  <path
-                    d={ROTATION_ICON_PATH}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
+        <div className="motion-controls">
+          <div className={`rotation-pill ${rotationEnabled ? "" : "rotation-pill-off"}`}>
+            <div className="rotation-slider-wrap">
+              <div className="rotation-label-row">
+                <span className="rotation-label">Rotation Speed</span>
+                <button
+                  type="button"
+                  onClick={toggleRotation}
+                  className={`rotation-toggle ${rotationEnabled ? "" : "rotation-toggle-off"}`}
+                  aria-label={rotationEnabled ? "Turn rotation off" : "Turn rotation on"}
+                  title={rotationEnabled ? "Mute rotation styling" : "Enable rotation styling"}
+                  style={rotationToggleStyle}
+                >
+                  <svg viewBox="0 0 24 24" className="rotation-icon" aria-hidden="true">
+                    <path
+                      d={ROTATION_ICON_PATH}
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
 
               <input
                 type="range"
@@ -374,25 +375,22 @@ export default function Home() {
                 } as CSSProperties}
                 aria-label="Rotation Speed"
               />
+            </div>
           </div>
-        </div>
 
-        {/* Haptic Feedback Toggle */}
-        <div className="flex flex-col gap-2">
-          <label>Haptic Feedback</label>
-
-          <PressButton
+          <button
+            type="button"
             onClick={() => setHapticEnabled(!hapticEnabled)}
-            className={`px-4 py-2 rounded text-white ${
-              hapticEnabled ? "bg-green-500" : "bg-gray-500"
-            }`}
+            className={`haptic-pill ${hapticEnabled ? "haptic-pill-on" : "haptic-pill-off"}`}
+            aria-pressed={hapticEnabled}
           >
-            {hapticEnabled ? "Enabled" : "Disabled"}
-          </PressButton>
+            <span className="haptic-label">Haptic Feedback</span>
+            <span className="haptic-state">{hapticEnabled ? "On" : "Off"}</span>
+          </button>
         </div>
 
         {/* Device Status */}
-        <div className="flex flex-col gap-2 border p-4 rounded bg-zinc-100 dark:bg-zinc-900">
+        <div className="flex w-full flex-col gap-2 border p-4 rounded bg-zinc-100 dark:bg-zinc-900">
           <h2 className="text-lg font-semibold">Device Status</h2>
 
           <div className="flex justify-between">

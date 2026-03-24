@@ -507,9 +507,93 @@ body {
     box-shadow 0.22s ease;
 }
 
+.motion-controls {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.motion-controls > .rotation-pill {
+  flex: 3 1 0;
+}
+
+.motion-controls > .haptic-pill {
+  flex: 1 1 0;
+}
+
+.haptic-pill {
+  position: relative;
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1.1rem;
+  border: none;
+  border-radius: 2rem;
+  overflow: hidden;
+  text-align: left;
+  transition:
+    background 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.2s ease;
+  cursor: pointer;
+}
+
+.haptic-pill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+}
+
+.haptic-pill > * {
+  position: relative;
+  z-index: 1;
+}
+
+.haptic-pill:hover {
+  transform: translateY(-1px);
+}
+
+.haptic-pill-on {
+  background: linear-gradient(180deg, #d7f7e2 0%, #b4edc9 100%);
+  box-shadow: 0 10px 24px rgba(34, 197, 94, 0.22);
+}
+
+.haptic-pill-off {
+  background: linear-gradient(180deg, #ececf0 0%, #d8d8de 100%);
+  box-shadow: 0 10px 24px rgba(113, 113, 122, 0.16);
+}
+
+.haptic-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #166534;
+}
+
+.haptic-state {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #15803d;
+}
+
+.haptic-pill-off .haptic-label,
+.haptic-pill-off .haptic-state {
+  color: #3f3f46;
+}
+
 @media (max-width: 640px) {
   .level-controls {
     grid-template-columns: 1fr;
+  }
+
+  .motion-controls {
+    flex-direction: column;
   }
 }
 
