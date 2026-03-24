@@ -101,7 +101,7 @@ body {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(180deg, rgba(173, 173, 180, 0.72) 0%, rgba(128, 128, 136, 0.72) 100%);
+  background: linear-gradient(180deg, rgba(228, 228, 233, 0.9) 0%, rgba(193, 193, 201, 0.9) 100%);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.28s ease;
@@ -140,7 +140,7 @@ body {
 }
 
 .luminosity-toggle-off {
-  opacity: 0.72;
+  opacity: 1;
 }
 
 .luminosity-icon {
@@ -164,6 +164,10 @@ body {
   font-weight: 700;
   color: #5c4300;
   font-size: 0.9rem;
+}
+
+.luminosity-pill-off .luminosity-label {
+  color: #2d2d33;
 }
 
 .luminosity-slider {
@@ -226,7 +230,7 @@ body {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(180deg, rgba(173, 173, 180, 0.72) 0%, rgba(128, 128, 136, 0.72) 100%);
+  background: linear-gradient(180deg, rgba(228, 228, 233, 0.9) 0%, rgba(193, 193, 201, 0.9) 100%);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.28s ease;
@@ -258,6 +262,10 @@ body {
   font-size: 0.9rem;
 }
 
+.volume-pill-off .volume-label {
+  color: #2d2d33;
+}
+
 .volume-toggle {
   display: flex;
   height: 2rem;
@@ -282,7 +290,7 @@ body {
 }
 
 .volume-toggle-off {
-  opacity: 0.72;
+  opacity: 1;
 }
 
 .volume-icon {

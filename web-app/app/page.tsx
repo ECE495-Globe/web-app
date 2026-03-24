@@ -115,7 +115,7 @@ export default function Home() {
   };
 
   const luminosityMix = luminosity / 100;
-  const luminosityColor = `rgb(${Math.round(17 + (255 - 17) * luminosityMix)}, ${Math.round(17 + (207 - 17) * luminosityMix)}, ${Math.round(17 + (90 - 17) * luminosityMix)})`;
+  const luminosityColor = `rgb(${Math.round(120 + (255 - 120) * luminosityMix)}, ${Math.round(86 + (207 - 86) * luminosityMix)}, ${Math.round(28 + (90 - 28) * luminosityMix)})`;
   const luminosityFill = `linear-gradient(90deg, ${luminosityColor} 0%, ${luminosityColor} ${luminosity}%, rgba(0, 0, 0, 0.12) ${luminosity}%, rgba(0, 0, 0, 0.12) 100%)`;
   const luminosityGlow = `rgba(255, 207, 90, ${0.18 + luminosityMix * 0.4})`;
   const luminosityToggleStyle = {
