@@ -1,6 +1,6 @@
 "use client";
 import type { CSSProperties } from "react";
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import PressButton from "./components/PressButton";
 
 const LUMINOSITY_ICON_PATH =
@@ -57,6 +57,8 @@ function buildControlStyles({
 }
 
 export default function Home() {
+  const hasMountedRef = useRef(false);
+
   // Set-up default states for the globe
   const [luminosity, setLuminosity] = useState(100);
   const [luminosityEnabled, setLuminosityEnabled] = useState(true);
@@ -202,8 +204,33 @@ export default function Home() {
     glowStrength: 0.32,
   });
 
+  useEffect(() => {
+    if (!hasMountedRef.current) {
+      hasMountedRef.current = true;
+      return;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      console.log("Settings sent");
+      void publishSettings();
+    }, 500);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, [
+    dataSource,
+    luminosity,
+    luminosityEnabled,
+    rotation,
+    rotationEnabled,
+    volume,
+    volumeEnabled,
+    hapticEnabled,
+  ]);
+
   return (
-    <div className="flex items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex w-full max-w-3xl flex-col gap-6 py-20 px-16 bg-white dark:bg-black">
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
         
