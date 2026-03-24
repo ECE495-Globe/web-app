@@ -100,7 +100,7 @@ export default function Home() {
                     await triggerDayNightScript();
                     }}
                     className={`source-pill ${
-                    dataSource === "Day-Night" ? "source-pill-active source-pill-day" : "source-pill-inactive"
+                    dataSource === "Day-Night" ? "source-pill-active bg-blue-500" : "source-pill-inactive"
                     }`}
                 > Day-Night </PressButton>
 
@@ -110,7 +110,7 @@ export default function Home() {
                     await triggerWeatherScript();
                     }}
                     className={`source-pill ${
-                    dataSource === "Weather" ? "source-pill-active source-pill-weather" : "source-pill-inactive"
+                    dataSource === "Weather" ? "source-pill-active bg-green-500" : "source-pill-inactive"
                     }`}
                 > Weather </PressButton>
 
@@ -120,7 +120,7 @@ export default function Home() {
                     await triggerStripeScript();
                     }}
                     className={`source-pill ${
-                    dataSource === "Stripe" ? "source-pill-active source-pill-stripe" : "source-pill-inactive"
+                    dataSource === "Stripe" ? "source-pill-active bg-purple-500" : "source-pill-inactive"
                     }`}
                 > Stripe </PressButton>
           </div>
