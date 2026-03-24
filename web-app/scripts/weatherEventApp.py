@@ -1,6 +1,6 @@
 import requests
 import json
-import paho.mqtt.client as mqtt
+# import paho.mqtt.client as mqtt
 
 from mapToCoordinates import countries, states, provinces
 
@@ -47,14 +47,50 @@ def chunk_list(data, size):
 
 
 locations = {**countries, **states, **provinces}
-# location_items = list(locations.items())
-# print(locations)
+location_items = list(locations.items())
 
 base_url = "https://api.open-meteo.com/v1/forecast"
 
+weather_data = {
+    "type": "Weather",
+    "data": {}
+}
 
-weather_data = {}
+BATCH_SIZE = 51 # Tried 200, was way to big, 50 was too small
 
+# BATCH LOOP
+for chunk in chunk_list(location_items, BATCH_SIZE):
+
+    keys = [item[0] for item in chunk]
+    lats = [item[1][0] for item in chunk]
+    lons = [item[1][1] for item in chunk]
+
+    params = {
+        "latitude": lats,
+        "longitude": lons,
+        "current": "temperature_2m"
+    }
+
+    try:
+        response = requests.get(base_url, params=params, timeout=10)
+        response.raise_for_status()
+        data = response.json()
+    except Exception as e:
+        print(f"Batch request failed: {e}")
+        continue
+
+    # Handle batched response (list of results)
+    for i, location in enumerate(keys):
+        try:
+            temp = data[i]["current"]["temperature_2m"]
+            rgb = temp_to_rgb(temp)
+            weather_data["data"][location] = rgb
+        except Exception as e:
+            print(f"Error processing {location}: {e}")
+
+
+# Send full dataset
+'''
 
 for location_key, (lat, lon) in locations.items():
     params = {
@@ -79,7 +115,7 @@ for location_key, (lat, lon) in locations.items():
         "temp": temp,
         "rgb": [r,g,b]
     }
-
+'''
 
 payload = json.dumps(weather_data)
 print("Published weather data via MQTT. Payload:", payload)

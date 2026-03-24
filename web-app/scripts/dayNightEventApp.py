@@ -21,7 +21,7 @@ daynight_data = {
     "data": {}
 }
 
-BATCH_SIZE = 50 # Tried 200, was way to big
+BATCH_SIZE = 51 # Tried 200, was way to big, 50 was too small
 
 
 def daynight_to_rgb(is_day):
@@ -42,7 +42,7 @@ for chunk in chunk_list(location_items, BATCH_SIZE):
     }
 
     try:
-        response = requests.get(base_url, params=params, timeout=5)
+        response = requests.get(base_url, params=params, timeout=10)
         response.raise_for_status()
         data = response.json()
     except Exception as e:

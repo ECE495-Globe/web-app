@@ -9,17 +9,32 @@ export async function POST() {
       "https://api.open-meteo.com/v1/forecast?latitude=38.58&longitude=-121.49&current=temperature_2m"
     );
 
-    const weatherData = await response.json();
+    const data = await response.json();
+
+    const tempCurr = data.current?.temperature_2m ?? 0;
+
+    // simple temp to RGB mapping
+    const rgb =
+      tempCurr < -50 ? [255, 255, 255] : // White
+      tempCurr < -30 ? [128, 0, 128] : // Purple
+      tempCurr < -10 ? [0, 0, 255] : // Blue
+      tempCurr < 10 ? [0, 255, 0] : // Green
+      tempCurr < 25 ? [255, 255, 0] : // Yellow
+      tempCurr < 35 ? [255, 165, 0] : // Orange
+      [255, 0, 0]; // Red
 
     // Package JSON
     const payload = JSON.stringify({
       source: "weather",
       timestamp: new Date().toISOString(),
-      data: weatherData.current,
+      data: {
+        temp: tempCurr,
+        rgb: rgb
+      },
     });
 
     // Call MQTT Python script and pass JSON
-    const scriptPath = path.join(process.cwd(), "scripts/Publish.py");
+    const scriptPath = path.join(process.cwd(), "scripts/weatherEventApp.py");
 
     exec(`python3 ${scriptPath} '${payload}'`, (error, stdout, stderr) => {
       if (error) {
