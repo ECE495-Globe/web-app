@@ -10,6 +10,7 @@ function clamp(value:number, min:number, max:number) {
 export default function Home() {
   // Set-up default states for the globe
   const [luminosity, setLuminosity] = useState(100);
+  const [luminosityEnabled, setLuminosityEnabled] = useState(true);
   const [rotation, setRotation] = useState(0);
   const [volume, setVolume] = useState(0);
   const [hapticEnabled, setHapticEnabled] = useState(false);
@@ -86,6 +87,26 @@ export default function Home() {
     }
   };
 
+  const handleLuminosityChange = (value: number) => {
+    const nextValue = clamp(value, 0, 100);
+    setLuminosity(nextValue);
+  };
+
+  const toggleLuminosity = () => {
+    setLuminosityEnabled((current) => !current);
+  };
+
+  const luminosityMix = luminosity / 100;
+  const luminosityColor = luminosityEnabled
+    ? `rgb(${Math.round(17 + (255 - 17) * luminosityMix)}, ${Math.round(17 + (207 - 17) * luminosityMix)}, ${Math.round(17 + (90 - 17) * luminosityMix)})`
+    : "#8f8f95";
+  const luminosityFill = luminosityEnabled
+    ? `linear-gradient(90deg, ${luminosityColor} 0%, ${luminosityColor} ${luminosity}%, rgba(0, 0, 0, 0.12) ${luminosity}%, rgba(0, 0, 0, 0.12) 100%)`
+    : `linear-gradient(90deg, #9f9fa7 0%, #9f9fa7 ${luminosity}%, rgba(0, 0, 0, 0.12) ${luminosity}%, rgba(0, 0, 0, 0.12) 100%)`;
+  const luminosityGlow = luminosityEnabled
+    ? `rgba(255, 207, 90, ${0.18 + luminosityMix * 0.4})`
+    : "rgba(120, 120, 128, 0.18)";
+
   return (
     <div className="flex items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex w-full max-w-3xl flex-col gap-6 py-20 px-16 bg-white dark:bg-black">
@@ -139,27 +160,43 @@ export default function Home() {
             */}
             
         {/* Luminosity Input */}
-        <div className="flex flex-col gap-2">
-         <label>Luminosity (Global %): {luminosity.toFixed(3)}</label>
+        <div className={`luminosity-pill ${luminosityEnabled ? "" : "luminosity-pill-off"}`}>
+          <div className="luminosity-slider-wrap">
+            <div className="luminosity-label-row">
+              <span className="luminosity-label">Luminosity</span>
+              <button
+                type="button"
+                onClick={toggleLuminosity}
+                className={`luminosity-toggle ${luminosityEnabled ? "" : "luminosity-toggle-off"}`}
+                aria-label={luminosityEnabled ? "Turn luminosity off" : "Turn luminosity on"}
+                title={luminosityEnabled ? "Mute brightness styling" : "Enable brightness styling"}
+                style={{ color: luminosityColor, boxShadow: `0 0 0 1px rgba(0,0,0,0.04), 0 8px 20px ${luminosityGlow}` }}
+              >
+                <svg viewBox="0 0 24 24" className="luminosity-icon" aria-hidden="true">
+                  <path
+                    d="M9 18h6m-5 3h4m-5.5-6.5c-.9-.9-1.5-2.2-1.5-3.5a5 5 0 1 1 10 0c0 1.3-.6 2.6-1.5 3.5-.7.7-1.2 1.5-1.5 2.5h-3c-.3-1-.8-1.8-1.5-2.5Z"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
 
-          <input
-            type="range"
-            min="0"
-            max="100"
-            step="0.001"
-            value={luminosity}
-            onChange={(e) => setLuminosity(Number(e.target.value))}
-          />
-
-          <input
-            type="number"
-            min="0"
-            max="100"
-            step="0.001"
-            value={luminosity}
-            onChange={(e) => setLuminosity(clamp(Number(e.target.value), 0, 100))}
-            className="border p-1 rounded w-32"
-          />
+            <input
+              type="range"
+              min="0"
+              max="100"
+              step="0.001"
+              value={luminosity}
+              onChange={(e) => handleLuminosityChange(Number(e.target.value))}
+              className="luminosity-slider"
+              style={{ background: luminosityFill, color: luminosityColor }}
+              aria-label="Luminosity"
+            />
+          </div>
         </div>
 
         {/* Rotation Input */}

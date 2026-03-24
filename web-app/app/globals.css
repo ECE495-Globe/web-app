@@ -25,7 +25,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Main File Select Buttons */
+/* Source Select Buttons */
 
 .source-band {
   display: flex;
@@ -78,5 +78,111 @@ body {
   background: #d4d4d8;
   color: #3f3f46;
   opacity: 0.8;
+}
+
+.luminosity-pill {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  gap: 0;
+  padding: 1rem 1.1rem;
+  border-radius: 2rem;
+  background: linear-gradient(180deg, #fff8e7 0%, #fff1c7 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.luminosity-pill-off {
+  background: linear-gradient(180deg, #ececf0 0%, #d8d8de 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.luminosity-toggle {
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 9999px;
+  background: transparent;
+  transition:
+    transform 0.2s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.luminosity-toggle:hover {
+  transform: scale(1.04);
+}
+
+.luminosity-toggle-off {
+  color: #a1a1aa;
+  box-shadow: none;
+}
+
+.luminosity-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.luminosity-slider-wrap {
+  flex: 1 1 auto;
+  transition: opacity 0.3s ease;
+}
+
+.luminosity-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.55rem;
+}
+
+.luminosity-label {
+  font-weight: 700;
+  color: #5c4300;
+  font-size: 0.9rem;
+}
+
+.luminosity-pill-off .luminosity-label {
+  color: #575761;
+}
+
+.luminosity-slider {
+  width: 100%;
+  height: 1rem;
+  appearance: none;
+  border-radius: 9999px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.luminosity-pill-off .luminosity-slider-wrap {
+  opacity: 0.9;
+}
+
+.luminosity-slider::-webkit-slider-thumb {
+  width: 1.25rem;
+  height: 1.25rem;
+  appearance: none;
+  border: none;
+  border-radius: 9999px;
+  background: currentColor;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+.luminosity-slider::-moz-range-thumb {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: none;
+  border-radius: 9999px;
+  background: currentColor;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
 }
 
