@@ -15,6 +15,42 @@ function clamp(value:number, min:number, max:number) {
   return Math.min(Math.max(value, min), max);
 }
 
+function interpolateChannel(start: number, end: number, mix: number) {
+  return Math.round(start + (end - start) * mix);
+}
+
+function buildControlStyles({
+  value,
+  enabled,
+  colorStart,
+  colorEnd,
+  glowColor,
+  glowStrength,
+}: {
+  value: number;
+  enabled: boolean;
+  colorStart: [number, number, number];
+  colorEnd: [number, number, number];
+  glowColor: [number, number, number];
+  glowStrength: number;
+}) {
+  const mix = value / 100;
+
+  const color = `rgb(${interpolateChannel(colorStart[0], colorEnd[0], mix)}, ${interpolateChannel(colorStart[1], colorEnd[1], mix)}, ${interpolateChannel(colorStart[2], colorEnd[2], mix)})`;
+
+  const fill = `linear-gradient(90deg, ${color} 0%, ${color} ${value}%, rgba(0, 0, 0, 0.12) ${value}%, rgba(0, 0, 0, 0.12) 100%)`;
+
+  const glow = `rgba(${glowColor[0]}, ${glowColor[1]}, ${glowColor[2]}, ${0.18 + mix * glowStrength})`;
+
+  const toggleStyle = {
+    color: enabled ? color : "#3f3f46",
+    boxShadow: enabled
+      ? `0 0 0 1px rgba(0,0,0,0.04), 0 8px 20px ${glow}`
+      : "0 0 0 1px rgba(63,63,70,0.18)",
+  };
+
+  return { color, fill, glow, toggleStyle };
+}
 
 export default function Home() {
   // Set-up default states for the globe
@@ -114,26 +150,31 @@ export default function Home() {
     setVolumeEnabled((current) => !current);
   };
 
-  const luminosityMix = luminosity / 100;
-  const luminosityColor = `rgb(${Math.round(120 + (255 - 120) * luminosityMix)}, ${Math.round(86 + (207 - 86) * luminosityMix)}, ${Math.round(28 + (90 - 28) * luminosityMix)})`;
-  const luminosityFill = `linear-gradient(90deg, ${luminosityColor} 0%, ${luminosityColor} ${luminosity}%, rgba(0, 0, 0, 0.12) ${luminosity}%, rgba(0, 0, 0, 0.12) 100%)`;
-  const luminosityGlow = `rgba(255, 207, 90, ${0.18 + luminosityMix * 0.4})`;
-  const luminosityToggleStyle = {
-    color: luminosityEnabled ? luminosityColor : "#3f3f46",
-    boxShadow: luminosityEnabled
-      ? `0 0 0 1px rgba(0,0,0,0.04), 0 8px 20px ${luminosityGlow}`
-      : "0 0 0 1px rgba(63,63,70,0.18)",
-  };
-  const volumeMix = volume / 100;
-  const volumeColor = `rgb(${Math.round(130 + (168 - 130) * volumeMix)}, ${Math.round(190 + (228 - 190) * volumeMix)}, ${Math.round(220 + (255 - 220) * volumeMix)})`;
-  const volumeFill = `linear-gradient(90deg, ${volumeColor} 0%, ${volumeColor} ${volume}%, rgba(0, 0, 0, 0.12) ${volume}%, rgba(0, 0, 0, 0.12) 100%)`;
-  const volumeGlow = `rgba(140, 205, 255, ${0.18 + volumeMix * 0.35})`;
-  const volumeToggleStyle = {
-    color: volumeEnabled ? volumeColor : "#3f3f46",
-    boxShadow: volumeEnabled
-      ? `0 0 0 1px rgba(0,0,0,0.04), 0 8px 20px ${volumeGlow}`
-      : "0 0 0 1px rgba(63,63,70,0.18)",
-  };
+  const {
+    color: luminosityColor,
+    fill: luminosityFill,
+    toggleStyle: luminosityToggleStyle,
+  } = buildControlStyles({
+    value: luminosity,
+    enabled: luminosityEnabled,
+    colorStart: [120, 86, 28],
+    colorEnd: [255, 207, 90],
+    glowColor: [255, 207, 90],
+    glowStrength: 0.4,
+  });
+
+  const {
+    color: volumeColor,
+    fill: volumeFill,
+    toggleStyle: volumeToggleStyle,
+  } = buildControlStyles({
+    value: volume,
+    enabled: volumeEnabled,
+    colorStart: [130, 190, 220],
+    colorEnd: [168, 228, 255],
+    glowColor: [140, 205, 255],
+    glowStrength: 0.35,
+  });
 
   return (
     <div className="flex items-center justify-center bg-zinc-50 font-sans dark:bg-black">
