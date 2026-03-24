@@ -93,37 +93,40 @@ export default function Home() {
         
         {/* Data Source Buttons */}
         <div className="flex w-full flex-col gap-2">
-          <div className="source-band">
-                <PressButton
-                    onClick={async () => {
-                    setDataSource("Day-Night");
-                    await triggerDayNightScript();
-                    }}
-                    className={`source-pill ${
-                    dataSource === "Day-Night" ? "source-pill-active bg-blue-500" : "source-pill-inactive"
-                    }`}
-                > Day-Night </PressButton>
+            <div className="source-band">
+              <div className="source-band-title">API Source</div>
+              <div className="source-band-options">
+                    <PressButton
+                        onClick={async () => {
+                        setDataSource("Day-Night");
+                        await triggerDayNightScript();
+                        }}
+                        className={`source-pill ${
+                        dataSource === "Day-Night" ? "source-pill-active bg-blue-500" : "source-pill-inactive"
+                        }`}
+                    > Day-Night </PressButton>
 
-                <PressButton
-                    onClick={async () => {
-                    setDataSource("Weather");
-                    await triggerWeatherScript();
-                    }}
-                    className={`source-pill ${
-                    dataSource === "Weather" ? "source-pill-active bg-green-500" : "source-pill-inactive"
-                    }`}
-                > Weather </PressButton>
+                    <PressButton
+                        onClick={async () => {
+                        setDataSource("Weather");
+                        await triggerWeatherScript();
+                        }}
+                        className={`source-pill ${
+                        dataSource === "Weather" ? "source-pill-active bg-green-500" : "source-pill-inactive"
+                        }`}
+                    > Weather </PressButton>
 
-                <PressButton
-                    onClick={async () => {
-                    setDataSource("Stripe");
-                    await triggerStripeScript();
-                    }}
-                    className={`source-pill ${
-                    dataSource === "Stripe" ? "source-pill-active bg-purple-500" : "source-pill-inactive"
-                    }`}
-                > Stripe </PressButton>
-          </div>
+                    <PressButton
+                        onClick={async () => {
+                        setDataSource("Stripe");
+                        await triggerStripeScript();
+                        }}
+                        className={`source-pill ${
+                        dataSource === "Stripe" ? "source-pill-active bg-purple-500" : "source-pill-inactive"
+                        }`}
+                    > Stripe </PressButton>
+              </div>
+            </div>
         </div>
 
         {/*
@@ -134,6 +137,7 @@ export default function Home() {
           Publish Settings To Globe
         </PressButton>
             */}
+            
         {/* Luminosity Input */}
         <div className="flex flex-col gap-2">
          <label>Luminosity (Global %): {luminosity.toFixed(3)}</label>
