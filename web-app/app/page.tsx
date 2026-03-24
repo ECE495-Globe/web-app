@@ -97,15 +97,9 @@ export default function Home() {
   };
 
   const luminosityMix = luminosity / 100;
-  const luminosityColor = luminosityEnabled
-    ? `rgb(${Math.round(17 + (255 - 17) * luminosityMix)}, ${Math.round(17 + (207 - 17) * luminosityMix)}, ${Math.round(17 + (90 - 17) * luminosityMix)})`
-    : "#8f8f95";
-  const luminosityFill = luminosityEnabled
-    ? `linear-gradient(90deg, ${luminosityColor} 0%, ${luminosityColor} ${luminosity}%, rgba(0, 0, 0, 0.12) ${luminosity}%, rgba(0, 0, 0, 0.12) 100%)`
-    : `linear-gradient(90deg, #9f9fa7 0%, #9f9fa7 ${luminosity}%, rgba(0, 0, 0, 0.12) ${luminosity}%, rgba(0, 0, 0, 0.12) 100%)`;
-  const luminosityGlow = luminosityEnabled
-    ? `rgba(255, 207, 90, ${0.18 + luminosityMix * 0.4})`
-    : "rgba(120, 120, 128, 0.18)";
+  const luminosityColor = `rgb(${Math.round(17 + (255 - 17) * luminosityMix)}, ${Math.round(17 + (207 - 17) * luminosityMix)}, ${Math.round(17 + (90 - 17) * luminosityMix)})`;
+  const luminosityFill = `linear-gradient(90deg, ${luminosityColor} 0%, ${luminosityColor} ${luminosity}%, rgba(0, 0, 0, 0.12) ${luminosity}%, rgba(0, 0, 0, 0.12) 100%)`;
+  const luminosityGlow = `rgba(255, 207, 90, ${0.18 + luminosityMix * 0.4})`;
 
   return (
     <div className="flex items-center justify-center bg-zinc-50 font-sans dark:bg-black">
@@ -163,7 +157,7 @@ export default function Home() {
         <div className={`luminosity-pill ${luminosityEnabled ? "" : "luminosity-pill-off"}`}>
           <div className="luminosity-slider-wrap">
             <div className="luminosity-label-row">
-              <span className="luminosity-label">Luminosity</span>
+              <span className="luminosity-label">Brightness</span>
               <button
                 type="button"
                 onClick={toggleLuminosity}
