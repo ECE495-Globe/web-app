@@ -93,7 +93,6 @@ export default function Home() {
         
         {/* Data Source Buttons */}
         <div className="flex w-full flex-col gap-2">
-          <label>Current API: {dataSource}</label>
           <div className="source-band">
                 <PressButton
                     onClick={async () => {
@@ -127,13 +126,14 @@ export default function Home() {
           </div>
         </div>
 
+        {/*
         <PressButton
           onClick={publishSettings}
           className="px-6 py-3 bg-red-500 text-white rounded text-lg"
         >
           Publish Settings To Globe
         </PressButton>
-
+            */}
         {/* Luminosity Input */}
         <div className="flex flex-col gap-2">
          <label>Luminosity (Global %): {luminosity.toFixed(3)}</label>
