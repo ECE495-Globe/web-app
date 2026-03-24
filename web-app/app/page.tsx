@@ -1,4 +1,5 @@
 "use client";
+import type { CSSProperties } from "react";
 import { useState } from 'react';
 import PressButton from "./components/PressButton";
 
@@ -10,6 +11,9 @@ const VOLUME_ON_ICON_PATH =
 
 const VOLUME_OFF_ICON_PATH =
   "M4 10v4h3l4 4V6l-4 4H4Zm9 1 6 6m0-6-6 6";
+
+const ROTATION_ICON_PATH =
+  "M20 12a8 8 0 1 1-2.34-5.66M20 4v5h-5";
 
 function clamp(value:number, min:number, max:number) {
   return Math.min(Math.max(value, min), max);
@@ -57,6 +61,7 @@ export default function Home() {
   const [luminosity, setLuminosity] = useState(100);
   const [luminosityEnabled, setLuminosityEnabled] = useState(true);
   const [rotation, setRotation] = useState(0);
+  const [rotationEnabled, setRotationEnabled] = useState(true);
   const [volume, setVolume] = useState(0);
   const [volumeEnabled, setVolumeEnabled] = useState(true);
   const [hapticEnabled, setHapticEnabled] = useState(false);
@@ -69,10 +74,10 @@ export default function Home() {
   const publishSettings = async () => {
 
     let direction = 0;
-    let speed = Math.abs(rotation);
+    let speed = rotationEnabled ? Math.abs(rotation) : 0;
 
-    if (rotation > 0) direction = 1;
-    if (rotation < 0) direction = 2;
+    if (rotationEnabled && rotation > 0) direction = 1;
+    if (rotationEnabled && rotation < 0) direction = 2;
 
     await fetch("/api/publish", {
       method: "POST",
@@ -150,6 +155,14 @@ export default function Home() {
     setVolumeEnabled((current) => !current);
   };
 
+  const handleRotationChange = (value: number) => {
+    setRotation(clamp(value, 0, 100));
+  };
+
+  const toggleRotation = () => {
+    setRotationEnabled((current) => !current);
+  };
+
   const {
     color: luminosityColor,
     fill: luminosityFill,
@@ -174,6 +187,19 @@ export default function Home() {
     colorEnd: [168, 228, 255],
     glowColor: [140, 205, 255],
     glowStrength: 0.35,
+  });
+
+  const {
+    color: rotationColor,
+    fill: rotationFill,
+    toggleStyle: rotationToggleStyle,
+  } = buildControlStyles({
+    value: rotation,
+    enabled: rotationEnabled,
+    colorStart: [132, 58, 28],
+    colorEnd: [255, 122, 69],
+    glowColor: [255, 122, 69],
+    glowStrength: 0.32,
   });
 
   return (
@@ -309,38 +335,49 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Rotation Input */}
-        <div className="flex flex-col gap-2">
-          <label>Rotation (%): {rotation.toFixed(3)}</label>
+        <div className={`rotation-pill ${rotationEnabled ? "" : "rotation-pill-off"}`}>
+          <div className="rotation-slider-wrap">
+            <div className="rotation-label-row">
+              <span className="rotation-label">Rotation Speed</span>
+              <button
+                type="button"
+                onClick={toggleRotation}
+                className={`rotation-toggle ${rotationEnabled ? "" : "rotation-toggle-off"}`}
+                aria-label={rotationEnabled ? "Turn rotation off" : "Turn rotation on"}
+                title={rotationEnabled ? "Mute rotation styling" : "Enable rotation styling"}
+                style={rotationToggleStyle}
+              >
+                <svg viewBox="0 0 24 24" className="rotation-icon" aria-hidden="true">
+                  <path
+                    d={ROTATION_ICON_PATH}
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
 
-          <input
-            type="range"
-            min="0"
-            max="100"
-            step="0.001"
-            value={rotation}
-            onChange={(e) => setRotation(Number(e.target.value))}
-          />
-
-          <input
-            type="number"
-            min="0"
-            max="100"
-            step="0.001"
-            value={rotation}
-            onChange={(e) => setRotation(clamp(Number(e.target.value), 0, 100))}
-            className="border p-1 rounded w-32"
-          />
+              <input
+                type="range"
+                min="0"
+                max="100"
+                step="0.001"
+                value={rotation}
+                onChange={(e) => handleRotationChange(Number(e.target.value))}
+                className="rotation-slider"
+                style={{
+                  "--rotation-fill": rotationFill,
+                  "--rotation-color": rotationColor,
+                } as CSSProperties}
+                aria-label="Rotation Speed"
+              />
+          </div>
         </div>
-        <PressButton
-          onClick={() => setRotation(Number(0))}
-          className="px-4 py-2 bg-yellow-500 text-white rounded"
-        >
-          Stop Rotation
-        </PressButton>
-        </div>
 
-          {/* Haptic Feedback Toggle */}
+        {/* Haptic Feedback Toggle */}
         <div className="flex flex-col gap-2">
           <label>Haptic Feedback</label>
 
@@ -386,6 +423,7 @@ export default function Home() {
             </a>{" "}
             center.
           </p>
+        </div>
         </div>
     
       </main>
