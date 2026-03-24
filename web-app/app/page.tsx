@@ -259,9 +259,21 @@ export default function Home() {
           <div className={`luminosity-pill ${luminosityEnabled ? "" : "luminosity-pill-off"}`}>
             <div className="luminosity-slider-wrap">
               <div className="luminosity-label-row">
-                <span className="luminosity-label">
-                  Brightness: {luminosityEnabled ? `${Math.round(luminosity)}%` : "Off"}
-                </span>
+                <label className="luminosity-label">
+                  <span>Brightness:</span>
+                  <input
+                    type="number"
+                    min="0"
+                    max="100"
+                    step="1"
+                    value={Math.round(luminosity)}
+                    onChange={(e) => handleLuminosityChange(Number(e.target.value))}
+                    className="pill-value-input"
+                    disabled={!luminosityEnabled}
+                    aria-label="Brightness value"
+                  />
+                  <span>%</span>
+                </label>
                 <button
                   type="button"
                   onClick={toggleLuminosity}
@@ -301,9 +313,21 @@ export default function Home() {
           <div className={`volume-pill ${volumeEnabled ? "" : "volume-pill-off"}`}>
             <div className="volume-slider-wrap">
               <div className="volume-label-row">
-                <span className="volume-label">
-                  Volume: {volumeEnabled ? `${Math.round(volume)}%` : "Off"}
-                </span>
+                <label className="volume-label">
+                  <span>Volume:</span>
+                  <input
+                    type="number"
+                    min="0"
+                    max="100"
+                    step="1"
+                    value={Math.round(volume)}
+                    onChange={(e) => handleVolumeChange(Number(e.target.value))}
+                    className="pill-value-input"
+                    disabled={!volumeEnabled}
+                    aria-label="Volume value"
+                  />
+                  <span>%</span>
+                </label>
                 <button
                   type="button"
                   onClick={toggleVolume}
@@ -343,9 +367,21 @@ export default function Home() {
           <div className={`rotation-pill ${rotationEnabled ? "" : "rotation-pill-off"}`}>
             <div className="rotation-slider-wrap">
               <div className="rotation-label-row">
-                <span className="rotation-label">
-                  Rotation Speed: {rotationEnabled ? `${Math.round(rotation)}%` : "Off"}
-                </span>
+                <label className="rotation-label">
+                  <span>Rotation Speed:</span>
+                  <input
+                    type="number"
+                    min="0"
+                    max="100"
+                    step="1"
+                    value={Math.round(rotation)}
+                    onChange={(e) => handleRotationChange(Number(e.target.value))}
+                    className="pill-value-input"
+                    disabled={!rotationEnabled}
+                    aria-label="Rotation speed value"
+                  />
+                  <span>%</span>
+                </label>
                 <button
                   type="button"
                   onClick={toggleRotation}

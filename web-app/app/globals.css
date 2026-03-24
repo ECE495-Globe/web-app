@@ -80,6 +80,31 @@ body {
   opacity: 0.8;
 }
 
+.pill-value-input {
+  width: 3.25rem;
+  margin: 0 0.35rem;
+  border: none;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.55);
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  text-align: center;
+  outline: none;
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.pill-value-input::-webkit-outer-spin-button,
+.pill-value-input::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+.pill-value-input:disabled {
+  opacity: 0.55;
+}
+
 .level-controls {
   display: grid;
   width: 100%;
