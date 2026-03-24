@@ -24,3 +24,58 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Main File Select Buttons */
+
+.source-band {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 9999px;
+  background: #e4e4e7;
+}
+
+.source-pill {
+  flex: 1 1 0;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition:
+    flex 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease,
+    opacity 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.source-pill-active {
+  flex: 1.35;
+  color: white;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.source-pill-inactive {
+  flex: 0.85;
+  background: #d4d4d8;
+  color: #3f3f46;
+  opacity: 0.8;
+}
+
+.source-pill-day {
+  background: #3b82f6;
+}
+
+.source-pill-weather {
+  background: #22c55e;
+}
+
+.source-pill-stripe {
+  background: #a855f7;
+}

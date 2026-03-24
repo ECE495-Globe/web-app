@@ -92,38 +92,38 @@ export default function Home() {
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
         
         {/* Data Source Buttons */}
-        <div className="flex flex-col gap-2">
+        <div className="flex w-full flex-col gap-2">
           <label>Current API: {dataSource}</label>
-          <div className="flex gap-4">
-            <PressButton
-              onClick={async() => {
-                setDataSource("Day-Night");
-                await triggerDayNightScript();
-              }}
-              className="px-4 py-2 bg-blue-500 text-white rounded"
-            >
-              Day-Night
-            </PressButton>
+          <div className="source-band">
+                <PressButton
+                    onClick={async () => {
+                    setDataSource("Day-Night");
+                    await triggerDayNightScript();
+                    }}
+                    className={`source-pill ${
+                    dataSource === "Day-Night" ? "source-pill-active source-pill-day" : "source-pill-inactive"
+                    }`}
+                > Day-Night </PressButton>
 
-            <PressButton
-              onClick={async () => {
-                setDataSource("Weather");
-                await triggerWeatherScript();
-              }}
-                className="px-4 py-2 bg-green-500 text-white rounded"
-              >
-              Weather
-            </PressButton>
+                <PressButton
+                    onClick={async () => {
+                    setDataSource("Weather");
+                    await triggerWeatherScript();
+                    }}
+                    className={`source-pill ${
+                    dataSource === "Weather" ? "source-pill-active source-pill-weather" : "source-pill-inactive"
+                    }`}
+                > Weather </PressButton>
 
-            <PressButton
-              onClick={async () => {
-                setDataSource("Stripe");
-                await triggerStripeScript();
-              }}
-              className="px-4 py-2 bg-purple-500 text-white rounded"
-            >
-              Stripe
-            </PressButton>
+                <PressButton
+                    onClick={async () => {
+                    setDataSource("Stripe");
+                    await triggerStripeScript();
+                    }}
+                    className={`source-pill ${
+                    dataSource === "Stripe" ? "source-pill-active source-pill-stripe" : "source-pill-inactive"
+                    }`}
+                > Stripe </PressButton>
           </div>
         </div>
 
