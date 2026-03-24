@@ -67,7 +67,7 @@ function getMqttClient() {
 
 function publishMessage(client: mqtt.MqttClient, topic: string, message: string) {
   return new Promise<void>((resolve, reject) => {
-    client.publish(topic, message, { qos: 0 }, (error) => {
+    client.publish(topic, message, { qos: 1 }, (error) => {
       if (error) {
         reject(error);
       } else {
