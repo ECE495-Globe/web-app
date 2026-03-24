@@ -80,6 +80,13 @@ body {
   opacity: 0.8;
 }
 
+.level-controls {
+  display: grid;
+  width: 100%;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .luminosity-pill {
   position: relative;
   display: flex;
@@ -350,5 +357,11 @@ body {
   transition:
     background-color 0.22s ease,
     box-shadow 0.22s ease;
+}
+
+@media (max-width: 640px) {
+  .level-controls {
+    grid-template-columns: 1fr;
+  }
 }
 

@@ -187,43 +187,84 @@ export default function Home() {
         </PressButton>
             */}
             
-        {/* Luminosity Input */}
-        <div className={`luminosity-pill ${luminosityEnabled ? "" : "luminosity-pill-off"}`}>
-          <div className="luminosity-slider-wrap">
-            <div className="luminosity-label-row">
-              <span className="luminosity-label">Brightness</span>
-              <button
-                type="button"
-                onClick={toggleLuminosity}
-                className={`luminosity-toggle ${luminosityEnabled ? "" : "luminosity-toggle-off"}`}
-                aria-label={luminosityEnabled ? "Turn luminosity off" : "Turn luminosity on"}
-                title={luminosityEnabled ? "Mute brightness styling" : "Enable brightness styling"}
-                style={luminosityToggleStyle}
-              >
-                <svg viewBox="0 0 24 24" className="luminosity-icon" aria-hidden="true">
-                  <path
-                    d={LUMINOSITY_ICON_PATH}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
+        <div className="level-controls">
+          {/* Luminosity Input */}
+          <div className={`luminosity-pill ${luminosityEnabled ? "" : "luminosity-pill-off"}`}>
+            <div className="luminosity-slider-wrap">
+              <div className="luminosity-label-row">
+                <span className="luminosity-label">Brightness</span>
+                <button
+                  type="button"
+                  onClick={toggleLuminosity}
+                  className={`luminosity-toggle ${luminosityEnabled ? "" : "luminosity-toggle-off"}`}
+                  aria-label={luminosityEnabled ? "Turn luminosity off" : "Turn luminosity on"}
+                  title={luminosityEnabled ? "Mute brightness styling" : "Enable brightness styling"}
+                  style={luminosityToggleStyle}
+                >
+                  <svg viewBox="0 0 24 24" className="luminosity-icon" aria-hidden="true">
+                    <path
+                      d={LUMINOSITY_ICON_PATH}
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
 
-            <input
-              type="range"
-              min="0"
-              max="100"
-              step="0.001"
-              value={luminosity}
-              onChange={(e) => handleLuminosityChange(Number(e.target.value))}
-              className="luminosity-slider"
-              style={{ background: luminosityFill, color: luminosityColor }}
-              aria-label="Luminosity"
-            />
+              <input
+                type="range"
+                min="0"
+                max="100"
+                step="0.001"
+                value={luminosity}
+                onChange={(e) => handleLuminosityChange(Number(e.target.value))}
+                className="luminosity-slider"
+                style={{ background: luminosityFill, color: luminosityColor }}
+                aria-label="Luminosity"
+              />
+            </div>
+          </div>
+
+          {/* Volume Input */}
+          <div className={`volume-pill ${volumeEnabled ? "" : "volume-pill-off"}`}>
+            <div className="volume-slider-wrap">
+              <div className="volume-label-row">
+                <span className="volume-label">Volume</span>
+                <button
+                  type="button"
+                  onClick={toggleVolume}
+                  className={`volume-toggle ${volumeEnabled ? "" : "volume-toggle-off"}`}
+                  aria-label={volumeEnabled ? "Turn volume off" : "Turn volume on"}
+                  title={volumeEnabled ? "Mute volume styling" : "Enable volume styling"}
+                  style={volumeToggleStyle}
+                >
+                  <svg viewBox="0 0 24 24" className="volume-icon" aria-hidden="true">
+                    <path
+                      d={volumeEnabled ? VOLUME_ON_ICON_PATH : VOLUME_OFF_ICON_PATH}
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value={volume}
+                onChange={(e) => handleVolumeChange(Number(e.target.value))}
+                className="volume-slider"
+                style={{ background: volumeFill, color: volumeColor }}
+                aria-label="Volume"
+              />
+            </div>
           </div>
         </div>
 
@@ -258,46 +299,7 @@ export default function Home() {
         </PressButton>
         </div>
 
-        {/* Volume Input */}
-        <div className={`volume-pill ${volumeEnabled ? "" : "volume-pill-off"}`}>
-          <div className="volume-slider-wrap">
-            <div className="volume-label-row">
-              <span className="volume-label">Volume</span>
-              <button
-                type="button"
-                onClick={toggleVolume}
-                className={`volume-toggle ${volumeEnabled ? "" : "volume-toggle-off"}`}
-                aria-label={volumeEnabled ? "Turn volume off" : "Turn volume on"}
-                title={volumeEnabled ? "Mute volume styling" : "Enable volume styling"}
-                style={volumeToggleStyle}
-              >
-                <svg viewBox="0 0 24 24" className="volume-icon" aria-hidden="true">
-                  <path
-                    d={volumeEnabled ? VOLUME_ON_ICON_PATH : VOLUME_OFF_ICON_PATH}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
-
-            <input
-              type="range"
-              min="0"
-              max="100"
-              value={volume}
-              onChange={(e) => handleVolumeChange(Number(e.target.value))}
-              className="volume-slider"
-              style={{ background: volumeFill, color: volumeColor }}
-              aria-label="Volume"
-            />
-          </div>
-        </div>
-
-        {/* Haptic Feedback Toggle */}
+          {/* Haptic Feedback Toggle */}
         <div className="flex flex-col gap-2">
           <label>Haptic Feedback</label>
 
