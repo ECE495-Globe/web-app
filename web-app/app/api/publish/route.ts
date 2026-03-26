@@ -1,10 +1,14 @@
 import mqtt from "mqtt";
+import { mkdir, writeFile } from "fs/promises";
+import path from "path";
 
 const BROKER_URL = "mqtt://broker.hivemq.com:1883";
 
 type PublishPayload = {
   source?: string;
   clearInstruction?: boolean;
+  luminosity?: number;
+  luminosityEnabled?: boolean;
   speed?: number;
   direction?: number;
   volume?: number;
@@ -26,6 +30,8 @@ const TOPICS: Record<ControlKey, string> = {
   haptic: "/trackpointai/globe/config/haptic",
 };
 const INSTRUCTION_TOPIC = "/trackpointai/globe/instruction";
+const DATA_DIR = path.join(process.cwd(), "data");
+const CONTROL_STATE_FILE = path.join(DATA_DIR, "control-state.json");
 const ALL_LOCATION_KEYS = [
   "AFG", "ALB", "ALG", "AGO", "ATG", "ARG", "ARM", "AUS", "AUT", "AZE", "BHS", "BHR", "BGD", "BRB", "BLR",
   "BEL", "BLZ", "BEN", "BTN", "BOL", "BIH", "BWA", "BRA", "BRN", "BGR", "BFA", "BDI", "KHM", "CMR", "CAN",
@@ -48,6 +54,23 @@ const ALL_LOCATION_KEYS = [
 
 function buildClearInstruction() {
   return ALL_LOCATION_KEYS.map((key) => `${key},0,0,0,0`).join("\n");
+}
+
+async function persistControlState(data: PublishPayload) {
+  await mkdir(DATA_DIR, { recursive: true });
+  await writeFile(
+    CONTROL_STATE_FILE,
+    JSON.stringify(
+      {
+        luminosity: typeof data.luminosity === "number" ? data.luminosity : 100,
+        luminosityEnabled: data.luminosityEnabled !== false,
+        updatedAt: new Date().toISOString(),
+      },
+      null,
+      2
+    ),
+    "utf8"
+  );
 }
 
 function getMqttClient() {
@@ -119,7 +142,7 @@ export async function POST(req: Request) {
     return data[key] !== lastPublishedState[key];
   });
 
-  if (changedEntries.length === 0 && !sourceChanged) {
+  if (changedEntries.length === 0 && !sourceChanged && !shouldClearInstruction) {
     console.log("[api/publish] no changed fields, skipping publish");
     return Response.json({ success: true, skipped: true });
   }
@@ -130,6 +153,7 @@ export async function POST(req: Request) {
   }
 
   try {
+    await persistControlState(data);
     const client = await getMqttClient();
 
     if (shouldClearInstruction) {

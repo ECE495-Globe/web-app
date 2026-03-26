@@ -4,6 +4,8 @@ import json
 from datetime import datetime
 from pathlib import Path
 
+from control_state import is_luminosity_enabled
+
 
 BROKER = "broker.hivemq.com"
 
@@ -110,6 +112,9 @@ def sanitize_instruction_payload(message):
 
 def publish_with_debug(topic, message):
     if topic == "/trackpointai/globe/instruction":
+        if not is_luminosity_enabled():
+            print("[MQTT skip] brightness disabled, skipping instruction publish", flush=True)
+            return
         message = sanitize_instruction_payload(message)
 
     info = client.publish(topic, message, qos=1)

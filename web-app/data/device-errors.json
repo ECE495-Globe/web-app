@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1774511695669-5d2qm1",
+    "message": "led_batch failed stage=EnsureDriverEnabled channel=3 driver=1 err=AcknowledgeCheckFailed(Unknown)",
+    "source": "device",
+    "level": "error",
+    "timestamp": "2026-03-26T07:54:55.669Z"
+  },
+  {
+    "id": "1774511695668-l8tieo",
+    "message": "led_batch failed stage=EnsureDriverEnabled channel=3 driver=1 err=AcknowledgeCheckFailed(Unknown)",
+    "source": "device",
+    "level": "error",
+    "timestamp": "2026-03-26T07:54:55.668Z"
+  }
+]

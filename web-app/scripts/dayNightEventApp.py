@@ -6,6 +6,7 @@ import time
 from datetime import datetime
 from pathlib import Path
 
+from control_state import load_luminosity
 from mapToCoordinates import countries, states, provinces
 
 
@@ -83,6 +84,7 @@ base_url = "https://api.open-meteo.com/v1/forecast"
 
 daynight_data = {
     "type": "Day-Night",
+    "luminosity": load_luminosity(),
     "data": {}
 }
 
