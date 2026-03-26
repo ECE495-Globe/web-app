@@ -220,32 +220,6 @@ else:
 
 
 # Send full dataset
-'''
-
-for location_key, (lat, lon) in locations.items():
-    params = {
-        "latitude": lat,
-        "longitude": lon,
-        "current": "temperature_2m"
-    }
-
-    response = requests.get(base_url, params=params)
-
-    if response.status_code != 200:
-        print("Request failed:", response.text)
-        continue
-
-    data = response.json()
-
-    temp = data["current"]["temperature_2m"]
-
-    r,g,b = temp_to_rgb(temp)
-
-    weather_data[location_key] = {
-        "temp": temp,
-        "rgb": [r,g,b]
-    }
-'''
 
 payload = json.dumps(weather_data)
 publish_script = str(Path(__file__).resolve().parent / "Publish.py")
