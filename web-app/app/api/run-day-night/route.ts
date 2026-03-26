@@ -18,8 +18,8 @@ export async function POST() {
 
     // Optional: map to RGB (same logic as Python)
     const rgb = isDay === 1
-      ? [255, 255, 0]  // Day
-      : [0, 0, 150];    // Night
+      ? [0, 0, 150]    // Day
+      : [255, 255, 0]; // Night
 
     console.log("[api/run-day-night] sampled day/night:", { isDay, rgb });
     const scriptPath = path.join(process.cwd(), "scripts/dayNightEventApp.py");

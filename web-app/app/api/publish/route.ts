@@ -4,6 +4,7 @@ const BROKER_URL = "mqtt://broker.hivemq.com:1883";
 
 type PublishPayload = {
   source?: string;
+  clearInstruction?: boolean;
   speed?: number;
   direction?: number;
   volume?: number;
@@ -24,6 +25,30 @@ const TOPICS: Record<ControlKey, string> = {
   volume: "/trackpointai/globe/config/volume",
   haptic: "/trackpointai/globe/config/haptic",
 };
+const INSTRUCTION_TOPIC = "/trackpointai/globe/instruction";
+const ALL_LOCATION_KEYS = [
+  "AFG", "ALB", "ALG", "AGO", "ATG", "ARG", "ARM", "AUS", "AUT", "AZE", "BHS", "BHR", "BGD", "BRB", "BLR",
+  "BEL", "BLZ", "BEN", "BTN", "BOL", "BIH", "BWA", "BRA", "BRN", "BGR", "BFA", "BDI", "KHM", "CMR", "CAN",
+  "CAF", "TCD", "CHL", "CHN", "COL", "COM", "COG", "COD", "CRI", "CIV", "HRV", "CUB", "CYP", "CZE", "DNK",
+  "DJI", "DMA", "DOM", "ECU", "EGY", "SLV", "GNQ", "ERI", "EST", "SWZ", "ETH", "FJI", "FIN", "FRA", "GAB",
+  "GMB", "GEO", "DEU", "GHA", "GRC", "GRD", "GTM", "GIN", "GNB", "GUY", "HTI", "HND", "HUN", "ISL", "IND",
+  "IDN", "IRN", "IRQ", "IRL", "ISR", "ITA", "JAM", "JPN", "JOR", "KAZ", "KEN", "KIR", "PRK", "KOR", "KWT",
+  "KGZ", "KOS", "LAO", "LVA", "LBN", "LSO", "LBR", "LBY", "LTU", "MAD", "MWI", "MYS", "MDV", "MLI", "MLT",
+  "MHL", "MRT", "MUS", "MEX", "FSM", "MOL", "MNG", "MNT", "MAR", "MOZ", "MMR", "NAM", "NRU", "NPL", "NLD",
+  "NZL", "NIC", "NER", "NGA", "MKD", "NWY", "OMN", "PAK", "PLW", "PAN", "PNG", "PRY", "PER", "PHL", "POL",
+  "POR", "PSE", "QAT", "ROU", "RUS", "RWA", "KNA", "LCA", "VCT", "WSM", "STP", "SAU", "SEN", "SRB", "SYC",
+  "SLE", "SGP", "SVK", "SVN", "SLB", "SOM", "ZAF", "SSD", "ESP", "LKA", "SDN", "SUR", "SWE", "CHE", "SYR",
+  "TWN", "TJK", "TZA", "THA", "TLS", "TGO", "TON", "TTO", "TUN", "TUR", "TKM", "TUV", "UGA", "UKR", "ARE",
+  "GBR", "URY", "UZB", "VUT", "VEN", "VNM", "YEM", "ZMB", "ZWE", "Ala", "Alk", "Ari", "Ark", "Cal", "Col",
+  "Con", "Del", "Flo", "Geo", "Haw", "Ida", "Ill", "Ind", "Iow", "Kan", "Ken", "Lou", "Mai", "Mar", "Mas",
+  "Mic", "Min", "Mis", "Mou", "Mon", "Neb", "Nev", "Neh", "Nem", "Nyc", "Nca", "Nda", "Ohi", "Okl", "Ore",
+  "Pen", "Rho", "Sca", "Sda", "Ten", "Tex", "Uta", "Ver", "Vir", "Was", "Wvi", "Wis", "Wyo", "BC", "YT",
+  "AB", "NT", "SK", "MB", "NU", "ON", "QC", "NB", "NL", "NS", "PE",
+] as const;
+
+function buildClearInstruction() {
+  return ALL_LOCATION_KEYS.map((key) => `${key},0,0,0,0`).join("\n");
+}
 
 function getMqttClient() {
   if (mqttClient && mqttClient.connected) {
@@ -84,6 +109,7 @@ export async function POST(req: Request) {
   const data = (await req.json()) as PublishPayload;
   console.log("[api/publish] incoming payload:", data);
   const sourceChanged = typeof data.source === "string" && data.source !== lastPublishedSource;
+  const shouldClearInstruction = data.clearInstruction === true;
 
   const changedEntries = (Object.keys(TOPICS) as ControlKey[]).filter((key) => {
     if (data[key] === undefined) {
@@ -104,11 +130,20 @@ export async function POST(req: Request) {
   }
 
   try {
-    if (changedEntries.length === 0) {
-      return Response.json({ success: true, sourceChanged: true, published: [] });
+    const client = await getMqttClient();
+
+    if (shouldClearInstruction) {
+      console.log("[api/publish] publishing blackout packet");
+      await publishMessage(client, INSTRUCTION_TOPIC, buildClearInstruction());
     }
 
-    const client = await getMqttClient();
+    if (changedEntries.length === 0) {
+      return Response.json({
+        success: true,
+        sourceChanged,
+        published: shouldClearInstruction ? ["instruction"] : [],
+      });
+    }
 
     for (const key of changedEntries) {
       const value = String(data[key]);

@@ -59,6 +59,7 @@ function buildControlStyles({
 export default function Home() {
   const hasMountedRef = useRef(false);
   const isSourceRunInFlightRef = useRef(false);
+  const [sourceRefreshNonce, setSourceRefreshNonce] = useState(0);
 
   // Set-up default states for the globe
   const [luminosity, setLuminosity] = useState(100);
@@ -74,7 +75,12 @@ export default function Home() {
   const [uptime, setUptime] = useState("0s");
   const [temperature, setTemperature] = useState("-- °C");
 
-  const publishSettings = async () => {
+  const selectSource = (nextSource: string) => {
+    setDataSource(nextSource);
+    setSourceRefreshNonce((current) => current + 1);
+  };
+
+  const publishSettings = async (options?: { clearInstruction?: boolean }) => {
 
     let direction = 0;
     let speed = rotationEnabled ? Math.abs(rotation) : 0;
@@ -90,6 +96,7 @@ export default function Home() {
       body: JSON.stringify({
         type: "control",
         source: dataSource,
+        clearInstruction: options?.clearInstruction ?? false,
         luminosity,
         speed,
         direction,
@@ -113,6 +120,8 @@ export default function Home() {
       isSourceRunInFlightRef.current = true;
 
       try {
+        await publishSettings({ clearInstruction: true });
+
         if (dataSource === "Weather") {
           await triggerWeatherScript();
         } else if (dataSource === "Day-Night") {
@@ -121,7 +130,7 @@ export default function Home() {
           await triggerStripeScript();
         }
 
-        // ALSO publish after fetching
+        // Publish controls after fetching without clearing the LEDs again.
         await publishSettings();
       } finally {
         isSourceRunInFlightRef.current = false;
@@ -131,15 +140,15 @@ export default function Home() {
     // Run immediately when source changes
     void runSelectedSource();
 
-    // Run every subsequent 60 seconds
-    const interval = setInterval(runSelectedSource, 60000);
+    // Run every subsequent 30 seconds
+    const interval = setInterval(runSelectedSource, 30000);
 
     // Cleanup when switching source
     return () => {
       console.log("Stopping auto-refresh for:", dataSource);
       clearInterval(interval);
     };
-  }, [dataSource]);
+  }, [dataSource, sourceRefreshNonce]);
 
   // let isRunning = false;
 
@@ -312,8 +321,8 @@ export default function Home() {
               <div className="source-band-title">API Source</div>
               <div className="source-band-options">
                     <PressButton
-                        onClick={async () => {
-                        setDataSource("Day-Night");
+                        onClick={() => {
+                        selectSource("Day-Night");
                         }}
                         className={`source-pill ${
                         dataSource === "Day-Night" ? "source-pill-active bg-blue-500" : "source-pill-inactive"
@@ -321,8 +330,8 @@ export default function Home() {
                     > Day-Night </PressButton>
 
                     <PressButton
-                        onClick={async () => {
-                        setDataSource("Weather");
+                        onClick={() => {
+                        selectSource("Weather");
                         }}
                         className={`source-pill ${
                         dataSource === "Weather" ? "source-pill-active bg-green-500" : "source-pill-inactive"
@@ -330,8 +339,8 @@ export default function Home() {
                     > Weather </PressButton>
 
                     <PressButton
-                        onClick={async () => {
-                        setDataSource("Stripe");
+                        onClick={() => {
+                        selectSource("Stripe");
                         }}
                         className={`source-pill ${
                         dataSource === "Stripe" ? "source-pill-active bg-purple-500" : "source-pill-inactive"

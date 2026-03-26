@@ -93,7 +93,24 @@ BETWEEN_BATCH_DELAY_SEC = 0.35
 
 
 def daynight_to_rgb(is_day):
-    return [255, 200, 0] if is_day == 1 else [0, 0, 150]
+    return [0, 0, 150] if is_day == 1 else [255, 200, 0]
+
+
+def normalize_batch_response(data, expected_count):
+    if isinstance(data, list):
+        normalized = data
+    elif isinstance(data, dict) and expected_count == 1:
+        normalized = [data]
+    else:
+        actual_type = type(data).__name__
+        raise ValueError(f"Unexpected Open-Meteo batch response shape: {actual_type}")
+
+    if len(normalized) != expected_count:
+        raise ValueError(
+            f"Unexpected Open-Meteo batch length: expected {expected_count}, got {len(normalized)}"
+        )
+
+    return normalized
 
 
 def fetch_batch(current_field, lats, lons):
@@ -119,24 +136,15 @@ def fetch_batch(current_field, lats, lons):
                     print("[Rate limit] day-night daily API limit exceeded, stopping fresh fetches")
                     return "DAILY_LIMIT"
 
-                retry_after = response.headers.get("Retry-After")
-                if retry_after:
-                    try:
-                        wait_seconds = max(1.0, float(retry_after))
-                    except ValueError:
-                        wait_seconds = 1.5 * (2 ** (attempt - 1))
-                else:
-                    wait_seconds = 1.5 * (2 ** (attempt - 1))
-
-                print(f"[Rate limit] day-night batch attempt {attempt}/{MAX_RETRIES}, retrying in {wait_seconds:.1f}s")
-                time.sleep(wait_seconds)
-                continue
+                print("[Rate limit] day-night batch rate-limited; skipping retries for this cycle")
+                return None
 
             response.raise_for_status()
             data = response.json()
-            if not isinstance(data, list):
-                raise ValueError("Unexpected Open-Meteo batch response shape")
-            return data
+            return normalize_batch_response(data, len(lats))
+        except requests.exceptions.Timeout as e:
+            print(f"Batch request timed out; skipping retries for this cycle: {e}")
+            return None
         except Exception as e:
             if attempt == MAX_RETRIES:
                 print(f"Batch request failed after {MAX_RETRIES} attempts: {e}")
