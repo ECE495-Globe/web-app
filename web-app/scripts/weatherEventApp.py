@@ -2,6 +2,7 @@ import requests
 import json
 import subprocess
 import sys
+import time
 from datetime import datetime
 from pathlib import Path
 
@@ -44,6 +45,9 @@ def _setup_script_logging():
 
 
 _LOG_HANDLE = _setup_script_logging()
+DATA_CACHE_DIR = Path(__file__).resolve().parent / "cache"
+DATA_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+CACHE_FILE = DATA_CACHE_DIR / "weather_last.json"
 
 def lerp(a, b, t):
     return int(a + (b - a) * t)
@@ -87,6 +91,26 @@ def chunk_list(data, size):
         yield data[i:i+size]
 
 
+def save_cache(dataset):
+    try:
+        with open(CACHE_FILE, "w", encoding="utf-8") as f:
+            json.dump(dataset, f)
+    except Exception as e:
+        print(f"[Cache] failed to save weather cache: {e}")
+
+
+def load_cache():
+    if not CACHE_FILE.exists():
+        return {}
+    try:
+        with open(CACHE_FILE, "r", encoding="utf-8") as f:
+            cached = json.load(f)
+        return cached if isinstance(cached, dict) else {}
+    except Exception as e:
+        print(f"[Cache] failed to read weather cache: {e}")
+        return {}
+
+
 locations = {**countries, **states, **provinces}
 location_items = list(locations.items())
 
@@ -97,7 +121,62 @@ weather_data = {
     "data": {}
 }
 
-BATCH_SIZE = 51 # Tried 200, was way to big, 50 was too small
+BATCH_SIZE = 50
+MAX_RETRIES = 4
+REQUEST_TIMEOUT = 15
+BETWEEN_BATCH_DELAY_SEC = 0.35
+
+
+def fetch_batch(current_field, lats, lons):
+    params = {
+        "latitude": lats,
+        "longitude": lons,
+        "current": current_field
+    }
+
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            response = requests.get(base_url, params=params, timeout=REQUEST_TIMEOUT)
+
+            if response.status_code == 429:
+                reason = ""
+                try:
+                    body = response.json()
+                    reason = str(body.get("reason", ""))
+                except Exception:
+                    reason = response.text
+
+                if "Daily API request limit exceeded" in reason:
+                    print("[Rate limit] weather daily API limit exceeded, stopping fresh fetches")
+                    return "DAILY_LIMIT"
+
+                retry_after = response.headers.get("Retry-After")
+                if retry_after:
+                    try:
+                        wait_seconds = max(1.0, float(retry_after))
+                    except ValueError:
+                        wait_seconds = 1.5 * (2 ** (attempt - 1))
+                else:
+                    wait_seconds = 1.5 * (2 ** (attempt - 1))
+
+                print(f"[Rate limit] weather batch attempt {attempt}/{MAX_RETRIES}, retrying in {wait_seconds:.1f}s")
+                time.sleep(wait_seconds)
+                continue
+
+            response.raise_for_status()
+            data = response.json()
+            if not isinstance(data, list):
+                raise ValueError("Unexpected Open-Meteo batch response shape")
+            return data
+        except Exception as e:
+            if attempt == MAX_RETRIES:
+                print(f"Batch request failed after {MAX_RETRIES} attempts: {e}")
+                return None
+            wait_seconds = 1.0 * (2 ** (attempt - 1))
+            print(f"Batch request attempt {attempt}/{MAX_RETRIES} failed: {e} | retrying in {wait_seconds:.1f}s")
+            time.sleep(wait_seconds)
+
+    return None
 
 # BATCH LOOP
 for chunk in chunk_list(location_items, BATCH_SIZE):
@@ -106,18 +185,10 @@ for chunk in chunk_list(location_items, BATCH_SIZE):
     lats = [item[1][0] for item in chunk]
     lons = [item[1][1] for item in chunk]
 
-    params = {
-        "latitude": lats,
-        "longitude": lons,
-        "current": "temperature_2m"
-    }
-
-    try:
-        response = requests.get(base_url, params=params, timeout=10)
-        response.raise_for_status()
-        data = response.json()
-    except Exception as e:
-        print(f"Batch request failed: {e}")
+    data = fetch_batch("temperature_2m", lats, lons)
+    if data == "DAILY_LIMIT":
+        break
+    if data is None:
         continue
 
     # Handle batched response (list of results)
@@ -128,6 +199,16 @@ for chunk in chunk_list(location_items, BATCH_SIZE):
             weather_data["data"][location] = rgb
         except Exception as e:
             print(f"Error processing {location}: {e}")
+
+    time.sleep(BETWEEN_BATCH_DELAY_SEC)
+
+if weather_data["data"]:
+    save_cache(weather_data["data"])
+else:
+    cached = load_cache()
+    if cached:
+        weather_data["data"] = cached
+        print(f"[Cache] using cached weather data points={len(cached)}")
 
 
 # Send full dataset

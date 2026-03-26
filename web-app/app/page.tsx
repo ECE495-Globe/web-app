@@ -58,6 +58,7 @@ function buildControlStyles({
 
 export default function Home() {
   const hasMountedRef = useRef(false);
+  const isSourceRunInFlightRef = useRef(false);
 
   // Set-up default states for the globe
   const [luminosity, setLuminosity] = useState(100);
@@ -104,16 +105,27 @@ export default function Home() {
     console.log("Starting auto-refresh for:", dataSource);
 
     const runSelectedSource = async () => {
-      if (dataSource === "Weather") {
-        await triggerWeatherScript();
-      } else if (dataSource === "Day-Night") {
-        await triggerDayNightScript();
-      } else if (dataSource === "Stripe") {
-        await triggerStripeScript();
+      if (isSourceRunInFlightRef.current) {
+        console.log("Skipping source run: previous run still in progress");
+        return;
       }
 
-      // ALSO publish after fetching
-      await publishSettings();
+      isSourceRunInFlightRef.current = true;
+
+      try {
+        if (dataSource === "Weather") {
+          await triggerWeatherScript();
+        } else if (dataSource === "Day-Night") {
+          await triggerDayNightScript();
+        } else if (dataSource === "Stripe") {
+          await triggerStripeScript();
+        }
+
+        // ALSO publish after fetching
+        await publishSettings();
+      } finally {
+        isSourceRunInFlightRef.current = false;
+      }
     };
 
     // Run immediately when source changes

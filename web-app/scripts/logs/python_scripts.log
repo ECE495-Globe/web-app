@@ -1806,3 +1806,1093 @@ Payload type: Stripe
 [MQTT ack] topic=/trackpointai/globe/instruction published=True
 [Publish.py exit] code=0
 Published stripe data via MQTT. points=5
+
+[2026-03-25T20:57:30] --- stripeEventApp.py start ---
+Stripe payload prepared. points=5
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128]}}
+
+[2026-03-25T20:57:31] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=5 valid=5
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=84 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=False
+[MQTT warn] publish timed out topic=/trackpointai/globe/instruction
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=5 valid=5
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=84 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=False
+[MQTT warn] publish timed out topic=/trackpointai/globe/instruction
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=5
+
+[2026-03-25T20:58:30] --- stripeEventApp.py start ---
+Stripe payload prepared. points=5
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128]}}
+
+[2026-03-25T20:58:31] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=5 valid=5
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=84 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=5 valid=5
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=84 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=5
+
+[2026-03-25T20:59:30] --- stripeEventApp.py start ---
+Stripe payload prepared. points=5
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128]}}
+
+[2026-03-25T20:59:31] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=5 valid=5
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=84 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=5 valid=5
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=84 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=5
+
+[2026-03-25T21:00:30] --- stripeEventApp.py start ---
+Stripe payload prepared. points=5
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128]}}
+
+[2026-03-25T21:00:31] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=5 valid=5
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=84 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=False
+[MQTT warn] publish timed out topic=/trackpointai/globe/instruction
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=5 valid=5
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=84 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=False
+[MQTT warn] publish timed out topic=/trackpointai/globe/instruction
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=5
+
+[2026-03-25T21:01:31] --- stripeEventApp.py start ---
+Stripe payload prepared. points=5
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128]}}
+
+[2026-03-25T21:01:32] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=5 valid=5
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=84 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=5 valid=5
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=84 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=5
+
+[2026-03-25T21:02:32] --- stripeEventApp.py start ---
+Stripe payload prepared. points=5
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128]}}
+
+[2026-03-25T21:02:33] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=5 valid=5
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=84 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=5 valid=5
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=84 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=5
+
+[2026-03-25T21:03:32] --- stripeEventApp.py start ---
+Stripe payload prepared. points=5
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128]}}
+
+[2026-03-25T21:03:32] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=5 valid=5
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=84 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=5 valid=5
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=84 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=5
+
+[2026-03-25T21:04:32] --- stripeEventApp.py start ---
+Stripe payload prepared. points=5
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128]}}
+
+[2026-03-25T21:04:33] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=5 valid=5
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=84 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=5 valid=5
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=84 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=5
+
+[2026-03-25T21:05:32] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-25T21:05:33] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-25T21:06:32] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-25T21:06:33] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=False
+[MQTT warn] publish timed out topic=/trackpointai/globe/instruction
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=False
+[MQTT warn] publish timed out topic=/trackpointai/globe/instruction
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-25T21:07:17] --- weatherEventApp.py start ---
+
+[2026-03-25T21:07:29] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,0,228,26', 'ALB,100,0,246,8', 'ALG,100,22,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4389 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,0,228,26', 'ALB,100,0,246,8', 'ALG,100,22,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4389 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=251
+
+[2026-03-25T21:08:17] --- weatherEventApp.py start ---
+
+[2026-03-25T21:08:29] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,0,228,26', 'ALB,100,0,246,8', 'ALG,100,22,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4389 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,0,228,26', 'ALB,100,0,246,8', 'ALG,100,22,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4389 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=251
+
+[2026-03-25T21:09:17] --- weatherEventApp.py start ---
+
+[2026-03-25T21:09:29] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,0,228,26', 'ALB,100,0,246,8', 'ALG,100,22,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4389 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,0,228,26', 'ALB,100,0,246,8', 'ALG,100,22,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4389 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=251
+
+[2026-03-25T21:10:07] --- weatherEventApp.py start ---
+Batch request attempt 1/4 failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=34.5553&latitude=41.3275&latitude=36.7538&latitude=-8.839&latitude=17.1274&latitude=-34.6037&latitude=40.1792&latitude=-35.2809&latitude=48.2082&latitude=40.4093&latitude=25.0443&latitude=26.2285&latitude=23.8103&latitude=13.0975&latitude=53.9006&latitude=50.8503&latitude=17.251&latitude=6.4969&latitude=27.4728&latitude=-16.4897&longitude=69.2075&longitude=19.8189&longitude=3.0588&longitude=13.2894&longitude=-61.8468&longitude=-58.3816&longitude=44.4991&longitude=149.13&longitude=16.3738&longitude=49.8671&longitude=-77.3504&longitude=50.586&longitude=90.4125&longitude=-59.6167&longitude=27.559&longitude=4.3517&longitude=-88.759&longitude=2.6289&longitude=89.639&longitude=-68.1193&current=temperature_2m (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)'))) | retrying in 1.0s
+Batch request attempt 2/4 failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=34.5553&latitude=41.3275&latitude=36.7538&latitude=-8.839&latitude=17.1274&latitude=-34.6037&latitude=40.1792&latitude=-35.2809&latitude=48.2082&latitude=40.4093&latitude=25.0443&latitude=26.2285&latitude=23.8103&latitude=13.0975&latitude=53.9006&latitude=50.8503&latitude=17.251&latitude=6.4969&latitude=27.4728&latitude=-16.4897&longitude=69.2075&longitude=19.8189&longitude=3.0588&longitude=13.2894&longitude=-61.8468&longitude=-58.3816&longitude=44.4991&longitude=149.13&longitude=16.3738&longitude=49.8671&longitude=-77.3504&longitude=50.586&longitude=90.4125&longitude=-59.6167&longitude=27.559&longitude=4.3517&longitude=-88.759&longitude=2.6289&longitude=89.639&longitude=-68.1193&current=temperature_2m (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)'))) | retrying in 2.0s
+
+[2026-03-25T21:10:29] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,0,228,26', 'ALB,100,0,246,8', 'ALG,100,22,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4389 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,0,228,26', 'ALB,100,0,246,8', 'ALG,100,22,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4389 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=251
+
+[2026-03-25T21:10:49] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-25T21:10:50] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=False
+[MQTT warn] publish timed out topic=/trackpointai/globe/instruction
+
+[2026-03-25T21:10:58] --- weatherEventApp.py start ---
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=False
+[MQTT warn] publish timed out topic=/trackpointai/globe/instruction
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-25T21:11:10] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,0,228,26', 'ALB,100,0,246,8', 'ALG,100,22,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4389 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,0,228,26', 'ALB,100,0,246,8', 'ALG,100,22,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4389 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=251
+
+[2026-03-25T21:11:58] --- weatherEventApp.py start ---
+
+[2026-03-25T21:12:10] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,0,228,26', 'ALB,100,0,246,8', 'ALG,100,22,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4389 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,0,228,26', 'ALB,100,0,246,8', 'ALG,100,22,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4389 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=251
+
+[2026-03-25T21:12:58] --- weatherEventApp.py start ---
+
+[2026-03-25T21:13:10] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,0,228,26', 'ALB,100,0,246,8', 'ALG,100,22,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4389 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,0,228,26', 'ALB,100,0,246,8', 'ALG,100,22,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4389 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=251
+
+[2026-03-25T21:13:58] --- weatherEventApp.py start ---
+
+[2026-03-25T21:14:10] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,0,228,26', 'ALB,100,0,246,8', 'ALG,100,22,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4389 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,0,228,26', 'ALB,100,0,246,8', 'ALG,100,22,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4389 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=251
+
+[2026-03-25T21:29:32] --- weatherEventApp.py start ---
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+Batch request attempt 3/4 failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=15.5007&latitude=5.852&latitude=59.3293&latitude=46.948&latitude=33.5138&latitude=25.033&latitude=38.5598&latitude=-6.1629&latitude=13.7563&latitude=-8.5569&latitude=6.1725&latitude=-21.1394&latitude=10.6549&latitude=36.8065&latitude=39.9334&latitude=37.9601&latitude=-8.5201&latitude=0.3476&latitude=50.4501&latitude=24.4539&longitude=32.5599&longitude=-55.2038&longitude=18.0686&longitude=7.4474&longitude=36.2765&longitude=121.5654&longitude=68.787&longitude=35.7516&longitude=100.5018&longitude=125.5603&longitude=1.2314&longitude=-175.204&longitude=-61.5019&longitude=10.1815&longitude=32.8597&longitude=58.3261&longitude=179.1981&longitude=32.5825&longitude=30.5234&longitude=54.3773&current=temperature_2m (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)'))) | retrying in 4.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+
+[2026-03-25T21:30:20] --- dayNightEventApp.py start ---
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+
+[2026-03-25T21:31:15] --- weatherEventApp.py start ---
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+
+[2026-03-25T21:32:05] --- Publish.py start ---
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=140 valid=140
+[Instruction sample] ['AFG,100,0,229,25', 'ALB,100,0,248,6', 'ALG,100,20,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2455 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=140 valid=140
+[Instruction sample] ['AFG,100,0,229,25', 'ALB,100,0,248,6', 'ALG,100,20,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2455 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=140
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+
+[2026-03-25T21:32:15] --- weatherEventApp.py start ---
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+
+[2026-03-25T21:32:51] --- dayNightEventApp.py start ---
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+
+[2026-03-25T21:32:58] --- weatherEventApp.py start ---
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+
+[2026-03-25T21:33:52] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-25T21:33:53] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[MQTT ack] topic=/trackpointai/globe/instruction published=False
+[MQTT warn] publish timed out topic=/trackpointai/globe/instruction
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=False
+[MQTT warn] publish timed out topic=/trackpointai/globe/instruction
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+
+[2026-03-25T21:34:49] --- weatherEventApp.py start ---
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+
+[2026-03-25T21:35:42] --- Publish.py start ---
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=0 valid=0
+[Instruction sample] []
+[Instruction skip] mode=Day-Night no valid points, not publishing empty payload
+[Publish.py stdout]
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=0 valid=0
+[Instruction sample] []
+[Instruction skip] mode=Day-Night no valid points, not publishing empty payload
+[Publish.py exit] code=0
+Day/Night data published to MQTT. points=0
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+
+[2026-03-25T21:35:49] --- weatherEventApp.py start ---
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+
+[2026-03-25T21:36:36] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=0 valid=0
+[Instruction sample] []
+[Instruction skip] mode=Weather no valid points, not publishing empty payload
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=0 valid=0
+[Instruction sample] []
+[Instruction skip] mode=Weather no valid points, not publishing empty payload
+[Publish.py exit] code=0
+Published weather data via MQTT. points=0
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+
+[2026-03-25T21:36:49] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+
+[2026-03-25T21:36:49] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=0 valid=0
+[Instruction sample] []
+[Instruction skip] mode=Weather no valid points, not publishing empty payload
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=0 valid=0
+[Instruction sample] []
+[Instruction skip] mode=Weather no valid points, not publishing empty payload
+[Publish.py exit] code=0
+Published weather data via MQTT. points=0
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+
+[2026-03-25T21:36:53] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+
+[2026-03-25T21:36:54] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=0 valid=0
+[Instruction sample] []
+[Instruction skip] mode=Weather no valid points, not publishing empty payload
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=0 valid=0
+[Instruction sample] []
+[Instruction skip] mode=Weather no valid points, not publishing empty payload
+[Publish.py exit] code=0
+Published weather data via MQTT. points=0
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+
+[2026-03-25T21:37:37] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=0 valid=0
+[Instruction sample] []
+[Instruction skip] mode=Weather no valid points, not publishing empty payload
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=0 valid=0
+[Instruction sample] []
+[Instruction skip] mode=Weather no valid points, not publishing empty payload
+[Publish.py exit] code=0
+Published weather data via MQTT. points=0
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] day-night batch attempt 1/4, retrying in 1.5s
+[Rate limit] day-night batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+
+[2026-03-25T21:37:53] --- weatherEventApp.py start ---
+[Rate limit] day-night batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+
+[2026-03-25T21:37:54] --- Publish.py start ---
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=0 valid=0
+[Instruction sample] []
+[Instruction skip] mode=Weather no valid points, not publishing empty payload
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=0 valid=0
+[Instruction sample] []
+[Instruction skip] mode=Weather no valid points, not publishing empty payload
+[Publish.py exit] code=0
+Published weather data via MQTT. points=0
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] day-night batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+
+[2026-03-25T21:38:12] --- Publish.py start ---
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=0 valid=0
+[Instruction sample] []
+[Instruction skip] mode=Day-Night no valid points, not publishing empty payload
+[Publish.py stdout]
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=0 valid=0
+[Instruction sample] []
+[Instruction skip] mode=Day-Night no valid points, not publishing empty payload
+[Publish.py exit] code=0
+Day/Night data published to MQTT. points=0
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+
+[2026-03-25T21:38:19] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=0 valid=0
+[Instruction sample] []
+[Instruction skip] mode=Weather no valid points, not publishing empty payload
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=0 valid=0
+[Instruction sample] []
+[Instruction skip] mode=Weather no valid points, not publishing empty payload
+[Publish.py exit] code=0
+Published weather data via MQTT. points=0
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+[Rate limit] weather batch attempt 1/4, retrying in 1.5s
+[Rate limit] weather batch attempt 4/4, retrying in 12.0s
+[Rate limit] weather batch attempt 2/4, retrying in 3.0s
+[Rate limit] weather batch attempt 3/4, retrying in 6.0s
+
+[2026-03-25T21:38:54] --- weatherEventApp.py start ---
+Traceback (most recent call last):
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/scripts/weatherEventApp.py", line 203, in <module>
+    time.sleep(BETWEEN_BATCH_DELAY_SEC)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/scripts/weatherEventApp.py", line 154, in <module>
+    if retry_after:
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/scripts/weatherEventApp.py", line 116, in fetch_batch
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/venv/lib/python3.13/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/venv/lib/python3.13/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/venv/lib/python3.13/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/venv/lib/python3.13/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/venv/lib/python3.13/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/venv/lib/python3.13/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.13/http/client.py", line 1430, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/lib/python3.13/ssl.py", line 1304, in recv_into
+    return self.read(nbytes, buffer)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/ssl.py", line 1138, in read
+    return self._sslobj.read(len, buffer)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyboardInterrupt
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/scripts/weatherEventApp.py", line 154, in <module>
+    if retry_after:
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/scripts/weatherEventApp.py", line 116, in fetch_batch
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/venv/lib/python3.13/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/venv/lib/python3.13/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/venv/lib/python3.13/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/venv/lib/python3.13/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/venv/lib/python3.13/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/venv/lib/python3.13/site-packages/urllib3/connection.py", line 796, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+        sock=sock,
+    ...<14 lines>...
+        assert_fingerprint=self.assert_fingerprint,
+    )
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/venv/lib/python3.13/site-packages/urllib3/connection.py", line 975, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+        sock=sock,
+    ...<8 lines>...
+        tls_in_tls=tls_in_tls,
+    )
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/venv/lib/python3.13/site-packages/urllib3/util/ssl_.py", line 483, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/venv/lib/python3.13/site-packages/urllib3/util/ssl_.py", line 527, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sock=sock,
+        ^^^^^^^^^^
+    ...<5 lines>...
+        session=session
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/lib/python3.13/ssl.py", line 1076, in _create
+    self.do_handshake()
+    ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/ssl.py", line 1372, in do_handshake
+    self._sslobj.do_handshake()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+KeyboardInterrupt
+
+[2026-03-25T21:39:04] --- weatherEventApp.py start ---
+Batch request attempt 1/4 failed: Unexpected Open-Meteo batch response shape | retrying in 1.0s
+Batch request attempt 2/4 failed: Unexpected Open-Meteo batch response shape | retrying in 2.0s
+Batch request attempt 3/4 failed: Unexpected Open-Meteo batch response shape | retrying in 4.0s
+Batch request failed after 4 attempts: Unexpected Open-Meteo batch response shape
+
+[2026-03-25T21:39:22] --- Publish.py start ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/subprocess.py", line 1222, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 2128, in _communicate
+    ready = selector.select(timeout)
+  File "/usr/lib/python3.13/selectors.py", line 398, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gostg/Documents/github/Capstone_Front_end/Deliverables/web-app/scripts/weatherEventApp.py", line 245, in <module>
+    publish_result = subprocess.run(
+        ["python3", publish_script, payload],
+        capture_output=True,
+        text=True
+    )
+  File "/usr/lib/python3.13/subprocess.py", line 556, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 1233, in communicate
+    self._wait(timeout=sigint_timeout)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 2060, in _wait
+    time.sleep(delay)
+    ~~~~~~~~~~^^^^^^^
+KeyboardInterrupt

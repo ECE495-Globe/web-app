@@ -168,7 +168,10 @@ if payload_type == "Day-Night":
 
     print(f"[Instruction build] mode=Day-Night total={len(day_night_data)} valid={parsed_count}", flush=True)
     print(f"[Instruction sample] {instructions.splitlines()[:3]}", flush=True)
-    publish_with_debug("/trackpointai/globe/instruction", instructions)
+    if parsed_count > 0:
+        publish_with_debug("/trackpointai/globe/instruction", instructions)
+    else:
+        print("[Instruction skip] mode=Day-Night no valid points, not publishing empty payload", flush=True)
 
 
 
@@ -191,7 +194,10 @@ elif payload_type == "Weather":
 
     print(f"[Instruction build] mode=Weather total={len(weather_data)} valid={parsed_count}", flush=True)
     print(f"[Instruction sample] {instructions.splitlines()[:3]}", flush=True)
-    publish_with_debug("/trackpointai/globe/instruction", instructions)
+    if parsed_count > 0:
+        publish_with_debug("/trackpointai/globe/instruction", instructions)
+    else:
+        print("[Instruction skip] mode=Weather no valid points, not publishing empty payload", flush=True)
 
 
 # STRIPE MODE
@@ -212,7 +218,10 @@ elif payload_type == "Stripe":
 
     print(f"[Instruction build] mode=Stripe total={len(stripe_data)} valid={parsed_count}", flush=True)
     print(f"[Instruction sample] {instructions.splitlines()[:3]}", flush=True)
-    publish_with_debug("/trackpointai/globe/instruction", instructions)
+    if parsed_count > 0:
+        publish_with_debug("/trackpointai/globe/instruction", instructions)
+    else:
+        print("[Instruction skip] mode=Stripe no valid points, not publishing empty payload", flush=True)
 
 # CONTROL MODE (UI BUTTON ONLY CHANGES CONFIG)
 elif payload_type == "control":
