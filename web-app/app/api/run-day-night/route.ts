@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
-import { exec } from "child_process";
+import { execFile } from "child_process";
 import path from "path";
+import { promisify } from "util";
+
+const execFileAsync = promisify(execFile);
 
 export async function POST() {
   try {
@@ -18,30 +21,22 @@ export async function POST() {
       ? [255, 255, 0]  // Day
       : [0, 0, 150];    // Night
 
-    // Package JSON
-    const payload = JSON.stringify({
-      source: "dayNight",
-      timestamp: new Date().toISOString(),
-      data: {
-        is_day: isDay,
-        rgb: rgb
-      },
-    });
-
-    // Call MQTT Python script and pass JSON
+    console.log("[api/run-day-night] sampled day/night:", { isDay, rgb });
     const scriptPath = path.join(process.cwd(), "scripts/dayNightEventApp.py");
+    console.log("[api/run-day-night] executing:", scriptPath);
 
-    exec(`python3 ${scriptPath} '${payload}'`, (error, stdout, stderr) => {
-      if (error) {
-        console.error("Python error:", stderr);
-      } else {
-        console.log("Python output:", stdout);
-      }
-    });
+    const { stdout, stderr } = await execFileAsync("python3", [scriptPath], { maxBuffer: 1024 * 1024 * 10 });
+    if (stdout) {
+      console.log("[api/run-day-night][python stdout]\n" + stdout);
+    }
+    if (stderr) {
+      console.error("[api/run-day-night][python stderr]\n" + stderr);
+    }
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, pythonLogged: true });
 
   } catch (err) {
+    console.error("[api/run-day-night] failed:", err);
     return NextResponse.json(
       { success: false, error: "Day/Night fetch failed" },
       { status: 500 }

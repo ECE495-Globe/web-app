@@ -1,8 +1,49 @@
 import requests
 import json
 import subprocess
+import sys
+from datetime import datetime
+from pathlib import Path
 
 from mapToCoordinates import countries, states, provinces
+
+
+LOG_DIR = Path(__file__).resolve().parent / "logs"
+LOG_DIR.mkdir(parents=True, exist_ok=True)
+LOG_FILE = LOG_DIR / "python_scripts.log"
+
+
+class _TeeStream:
+    def __init__(self, *streams):
+        self.streams = streams
+
+    def write(self, data):
+        for stream in self.streams:
+            try:
+                stream.write(data)
+                stream.flush()
+            except Exception:
+                pass
+        return len(data)
+
+    def flush(self):
+        for stream in self.streams:
+            try:
+                stream.flush()
+            except Exception:
+                pass
+
+
+def _setup_script_logging():
+    log_handle = open(LOG_FILE, "a", encoding="utf-8", buffering=1)
+    stamp = datetime.now().isoformat(timespec="seconds")
+    log_handle.write(f"\n[{stamp}] --- {Path(__file__).name} start ---\n")
+    sys.stdout = _TeeStream(sys.__stdout__, log_handle)
+    sys.stderr = _TeeStream(sys.__stderr__, log_handle)
+    return log_handle
+
+
+_LOG_HANDLE = _setup_script_logging()
 
 def lerp(a, b, t):
     return int(a + (b - a) * t)
@@ -118,6 +159,21 @@ for location_key, (lat, lon) in locations.items():
 '''
 
 payload = json.dumps(weather_data)
+publish_script = str(Path(__file__).resolve().parent / "Publish.py")
 
-subprocess.run(["python3", "Publish.py", payload])
-print("Published weather data via MQTT. Payload:", payload)
+publish_result = subprocess.run(
+    ["python3", publish_script, payload],
+    capture_output=True,
+    text=True
+)
+
+if publish_result.stdout:
+    print("[Publish.py stdout]")
+    print(publish_result.stdout, end="")
+
+if publish_result.stderr:
+    print("[Publish.py stderr]")
+    print(publish_result.stderr, end="")
+
+print(f"[Publish.py exit] code={publish_result.returncode}")
+print(f"Published weather data via MQTT. points={len(weather_data['data'])}")

@@ -3,19 +3,22 @@ import mqtt from "mqtt";
 const BROKER_URL = "mqtt://broker.hivemq.com:1883";
 
 type PublishPayload = {
+  source?: string;
   speed?: number;
   direction?: number;
   volume?: number;
   haptic?: number;
 };
 
-type PublishKey = keyof PublishPayload;
+type ControlKey = "speed" | "direction" | "volume" | "haptic";
+type LastControlState = Partial<Record<ControlKey, number>>;
 
 let mqttClient: mqtt.MqttClient | null = null;
 let connectPromise: Promise<mqtt.MqttClient> | null = null;
-let lastPublishedState: PublishPayload = {};
+let lastPublishedState: LastControlState = {};
+let lastPublishedSource: string | null = null;
 
-const TOPICS: Record<PublishKey, string> = {
+const TOPICS: Record<ControlKey, string> = {
   speed: "/trackpointai/globe/config/motorspeed",
   direction: "/trackpointai/globe/config/motordir",
   volume: "/trackpointai/globe/config/volume",
@@ -79,7 +82,10 @@ function publishMessage(client: mqtt.MqttClient, topic: string, message: string)
 
 export async function POST(req: Request) {
   const data = (await req.json()) as PublishPayload;
-  const changedEntries = (Object.keys(TOPICS) as PublishKey[]).filter((key) => {
+  console.log("[api/publish] incoming payload:", data);
+  const sourceChanged = typeof data.source === "string" && data.source !== lastPublishedSource;
+
+  const changedEntries = (Object.keys(TOPICS) as ControlKey[]).filter((key) => {
     if (data[key] === undefined) {
       return false;
     }
@@ -87,20 +93,35 @@ export async function POST(req: Request) {
     return data[key] !== lastPublishedState[key];
   });
 
-  if (changedEntries.length === 0) {
+  if (changedEntries.length === 0 && !sourceChanged) {
+    console.log("[api/publish] no changed fields, skipping publish");
     return Response.json({ success: true, skipped: true });
   }
 
+  if (sourceChanged) {
+    lastPublishedSource = data.source ?? null;
+    console.log(`[api/publish] source changed -> ${lastPublishedSource}`);
+  }
+
   try {
+    if (changedEntries.length === 0) {
+      return Response.json({ success: true, sourceChanged: true, published: [] });
+    }
+
     const client = await getMqttClient();
 
     for (const key of changedEntries) {
-      await publishMessage(client, TOPICS[key], String(data[key]));
+      const value = String(data[key]);
+      const topic = TOPICS[key];
+      console.log(`[api/publish] publishing ${key} -> ${topic} value=${value}`);
+      await publishMessage(client, topic, value);
       lastPublishedState[key] = data[key];
     }
 
-    return Response.json({ success: true, published: changedEntries });
+    console.log("[api/publish] published keys:", changedEntries);
+    return Response.json({ success: true, sourceChanged, published: changedEntries });
   } catch (error) {
+    console.error("[api/publish] publish failed:", error);
     return Response.json(
       { success: false, error: error instanceof Error ? error.message : "Unknown MQTT publish error" },
       { status: 500 }

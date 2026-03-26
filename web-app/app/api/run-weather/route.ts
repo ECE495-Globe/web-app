@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
-import { exec } from "child_process";
+import { execFile } from "child_process";
 import path from "path";
+import { promisify } from "util";
+
+const execFileAsync = promisify(execFile);
 
 export async function POST() {
   try {
@@ -23,30 +26,22 @@ export async function POST() {
       tempCurr < 35 ? [255, 165, 0] : // Orange
       [255, 0, 0]; // Red
 
-    // Package JSON
-    const payload = JSON.stringify({
-      source: "weather",
-      timestamp: new Date().toISOString(),
-      data: {
-        temp: tempCurr,
-        rgb: rgb
-      },
-    });
-
-    // Call MQTT Python script and pass JSON
+    console.log("[api/run-weather] sampled weather:", { tempCurr, rgb });
     const scriptPath = path.join(process.cwd(), "scripts/weatherEventApp.py");
+    console.log("[api/run-weather] executing:", scriptPath);
 
-    exec(`python3 ${scriptPath} '${payload}'`, (error, stdout, stderr) => {
-      if (error) {
-        console.error("Python error:", stderr);
-      } else {
-        console.log("Python output:", stdout);
-      }
-    });
+    const { stdout, stderr } = await execFileAsync("python3", [scriptPath], { maxBuffer: 1024 * 1024 * 10 });
+    if (stdout) {
+      console.log("[api/run-weather][python stdout]\n" + stdout);
+    }
+    if (stderr) {
+      console.error("[api/run-weather][python stderr]\n" + stderr);
+    }
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, pythonLogged: true });
 
   } catch (err) {
+    console.error("[api/run-weather] failed:", err);
     return NextResponse.json(
       { success: false, error: "Weather fetch failed" },
       { status: 500 }

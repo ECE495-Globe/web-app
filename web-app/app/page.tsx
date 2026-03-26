@@ -116,8 +116,8 @@ export default function Home() {
       await publishSettings();
     };
 
-    // Run once after Press
-    // runSelectedSource();
+    // Run immediately when source changes
+    void runSelectedSource();
 
     // Run every subsequent 60 seconds
     const interval = setInterval(runSelectedSource, 60000);
@@ -267,7 +267,6 @@ export default function Home() {
       window.clearTimeout(timeoutId);
     };
   }, [
-    dataSource,
     luminosity,
     luminosityEnabled,
     rotation,
@@ -303,7 +302,6 @@ export default function Home() {
                     <PressButton
                         onClick={async () => {
                         setDataSource("Day-Night");
-                        await triggerDayNightScript();
                         }}
                         className={`source-pill ${
                         dataSource === "Day-Night" ? "source-pill-active bg-blue-500" : "source-pill-inactive"
@@ -313,7 +311,6 @@ export default function Home() {
                     <PressButton
                         onClick={async () => {
                         setDataSource("Weather");
-                        await triggerWeatherScript();
                         }}
                         className={`source-pill ${
                         dataSource === "Weather" ? "source-pill-active bg-green-500" : "source-pill-inactive"
@@ -323,7 +320,6 @@ export default function Home() {
                     <PressButton
                         onClick={async () => {
                         setDataSource("Stripe");
-                        await triggerStripeScript();
                         }}
                         className={`source-pill ${
                         dataSource === "Stripe" ? "source-pill-active bg-purple-500" : "source-pill-inactive"
