@@ -1,11 +1,13 @@
 import requests
 import json
 import os
-import random
+import subprocess
 from datetime import datetime, timedelta, timezone
 from dotenv import load_dotenv
 
 from stripeToKey import countries
+
+
 
 # =========================
 # ENV SETUP
@@ -27,6 +29,7 @@ def load_transactions():
 
     return [
         {
+            "id": tx.get("id"),
             "key": tx["key"],
             "amount": tx["amount"],
             "time": datetime.fromisoformat(tx["time"])
@@ -39,6 +42,7 @@ def save_transactions(transactions):
     with open(DATA_FILE, "w") as f:
         json.dump([
             {
+                "id": tx.get("id"),
                 "key": tx["key"],
                 "amount": tx["amount"],
                 "time": tx["time"].isoformat()
@@ -48,28 +52,7 @@ def save_transactions(transactions):
 
 
 transactions = load_transactions()
-
-# =========================
-# FAKE DATA (FOR TESTING)
-# =========================
-def generate_fake_data(n=50):
-    fake = []
-
-    for _ in range(n):
-        country = random.choice(list(countries.keys()))
-
-        fake.append({
-            "amount": random.randint(100, 20000),
-            "billing_details": {
-                "address": {
-                    "country": country
-                }
-            },
-            "created": int(datetime.now(timezone.utc).timestamp())
-        })
-
-    return {"data": fake}
-
+# transactions = []
 
 # =========================
 # COLOR MAPPING
@@ -77,22 +60,47 @@ def generate_fake_data(n=50):
 def revenue_to_rgb(value):
     v = max(0, min(100000, value))
 
-    if v == 0: return (0, 0, 0)
-    if v <= 10: return (0, 0, 255)
-    if v <= 100: return (0, 255, 0)
-    if v <= 1000: return (255, 255, 0)
-    if v <= 10000: return (255, 165, 0)
+    if v == 0: return(0, 0, 0) # Light is off
+    if v <= 10: return (128, 0, 128) # Purple
+    if v <= 100: return (0, 0, 255) # Blue
+    if v <= 1000: return (0, 255, 0) # Green
+    if v <= 10000: return (255, 255, 0) # Yellow
+    if v <= 100000: return (255, 165, 0) # Orange
 
-    return (255, 0, 0)
-
+    return (255, 0, 0) # Red
 
 # =========================
 # INGEST DATA
 # =========================
 def ingest(data):
+    if not data or "data" not in data:
+        print("No valid data to ingest")
+        return
+
+    seen_ids = {tx.get("id") for tx in transactions if tx.get("id")}
+
     for charge in data.get("data", []):
-        address = charge.get("billing_details", {}).get("address", {})
-        country = address.get("country")
+
+        if charge.get("status") != "succeeded":
+            continue
+
+        charge_id = charge.get("id")
+        if charge_id in seen_ids:
+            continue
+
+        # Correct country extraction for Charges API
+        country = (
+            charge.get("billing_details", {})
+                  .get("address", {})
+                  .get("country")
+        )
+
+        if not country:
+            continue
+
+        key = countries.get(country.upper())
+        if not key:
+            continue
 
         timestamp = charge.get(
             "created",
@@ -101,18 +109,14 @@ def ingest(data):
 
         amount = charge.get("amount", 0) / 100
 
-        key = countries.get(country.upper()) if country else None
-        if not key:
-            continue
-
         transactions.append({
+            "id": charge_id,
             "key": key,
             "amount": amount,
             "time": datetime.fromtimestamp(timestamp, timezone.utc)
         })
 
     save_transactions(transactions)
-
 
 # =========================
 # AGGREGATE BY TIME WINDOW
@@ -134,44 +138,55 @@ def aggregate(window_hours):
         for key, value in revenue_map.items()
     }
 
-
 # =========================
-# FETCH DATA (REAL OR FAKE)
+# FETCH STRIPE DATA
 # =========================
 def fetch_data():
-    if STRIPE_KEY:
-        try:
-            response = requests.get(
-                "https://api.stripe.com/v1/charges",
-                headers={"Authorization": f"Bearer {STRIPE_KEY}"},
-                params={"limit": 100},
-                timeout=5
-            )
-            response.raise_for_status()
-            return response.json()
-        except Exception as e:
-            print("Stripe fetch failed, using fake data:", e)
+    if not STRIPE_KEY:
+        print("No Stripe key found")
+        return None
+    
+    try:
+        response = requests.get(
+            "https://api.stripe.com/v1/charges", # payment_intents
+            headers={"Authorization": f"Bearer {STRIPE_KEY}"},
+            params={
+                "limit": 10000,
+                # "expand[]": "data.charges" # Comment if polling charges
+            },
+            timeout=5
+        )
+        response.raise_for_status()
+        return response.json()
 
-    return generate_fake_data(20)
-
+    except Exception as e:
+        print("Stripe fetch failed:", e)
+        return None
 
 # =========================
 # MAIN
 # =========================
 data = fetch_data()
+
+if not data:
+    print("No data received from Stripe")
+    exit()
+
 ingest(data)
 
 stripe_data = {
     "type": "Stripe",
-    "data": {
-        "daily": aggregate(24),
-        "weekly": aggregate(24 * 7),
-        "monthly": aggregate(24 * 30),
-        "yearly": aggregate(24 * 365)
-    }
+    "data": aggregate(24*365)
+    # "data": {
+    #     "daily": aggregate(24),
+    #     "weekly": aggregate(24 * 7),
+    #     "monthly": aggregate(24 * 30),
+    #     "yearly": aggregate(24 * 365)
+    # }
 }
 
 payload = json.dumps(stripe_data)
 
 print(payload)
+subprocess.run(["python3", "Publish.py", payload])
 print("Published stripe data via MQTT")

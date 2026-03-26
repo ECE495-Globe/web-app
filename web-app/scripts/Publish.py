@@ -43,15 +43,17 @@ if payload_type == "Day-Night":
 
     day_night_data = data.get("data", {})
 
-    for location, info in day_night_data.items():
+    instructions = ""
 
+    for location, info in day_night_data.items():
         if "rgb" not in info:
             continue
 
         r, g, b = info["rgb"]
-        instruction = f"{location},{lum},{r},{g},{b}"
+        instructions += f"{location},{lum},{r},{g},{b}\n"
 
-        client.publish("/trackpointai/globe/instruction", instruction)
+    client.publish("/trackpointai/globe/instruction", instructions)
+
 
 
 # WEATHER MODE
@@ -59,25 +61,32 @@ elif payload_type == "Weather":
 
     weather_data = data.get("data", {})
 
+    instructions = ""
+
     for location, info in weather_data.items():
+        if "rgb" not in info:
+            continue
 
-        r, g, b = info
-        instruction = f"{location},{lum},{r},{g},{b}"
+        r, g, b = info["rgb"]
+        instructions += f"{location},{lum},{r},{g},{b}\n"
 
-        client.publish("/trackpointai/globe/instruction", instruction)
+    client.publish("/trackpointai/globe/instruction", instructions)
 
 
 # STRIPE MODE
 elif payload_type == "Stripe":
 
-    print("Stripe event")
+    stripe_data = data.get("data", {})
+    instructions = ""
 
-    # Optional: override config AFTER base config
-    client.publish("/trackpointai/globe/config/motorspeed", "50", qos=1)
-    client.publish("/trackpointai/globe/config/motordir", "1", qos=1)
+    for location, info in stripe_data.items():
+        if "rgb" not in info:
+            continue
 
-    instruction = f"global,{lum},255,0,255"
-    client.publish("/trackpointai/globe/instruction", instruction)
+        r, g, b = info["rgb"]
+        instructions += f"{location},{lum},{r},{g},{b}\n"
+    # print("Instructions: ", instructions, flush=True)
+    client.publish("/trackpointai/globe/instruction", instructions)
 
 # CONTROL MODE (UI BUTTON ONLY CHANGES CONFIG)
 elif payload_type == "control":

@@ -1,6 +1,6 @@
 import requests
 import json
-# import paho.mqtt.client as mqtt
+import subprocess
 
 from mapToCoordinates import countries, states, provinces
 
@@ -118,4 +118,6 @@ for location_key, (lat, lon) in locations.items():
 '''
 
 payload = json.dumps(weather_data)
+
+subprocess.run(["python3", "Publish.py", payload])
 print("Published weather data via MQTT. Payload:", payload)

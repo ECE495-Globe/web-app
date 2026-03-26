@@ -46,7 +46,7 @@ for chunk in chunk_list(location_items, BATCH_SIZE):
         response.raise_for_status()
         data = response.json()
     except Exception as e:
-        print(f"Batch request failed: {e}")
+        print(f"Batch request failed: {e}\n")
         continue
 
     # Handle batched response (list of results)
@@ -56,12 +56,12 @@ for chunk in chunk_list(location_items, BATCH_SIZE):
             rgb = daynight_to_rgb(is_day)
             daynight_data["data"][location] = rgb
         except Exception as e:
-            print(f"Error processing {location}: {e}")
+            print(f"Error processing {location}: {e}\n")
 
 
 # Send full dataset
 payload = json.dumps(daynight_data)
 
 
-# subprocess.run(["python3", "Publish.py", payload])
+subprocess.run(["python3", "Publish.py", payload])
 print("Day/Night data published to MQTT. Payload:", payload)

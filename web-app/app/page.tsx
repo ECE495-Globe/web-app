@@ -98,6 +98,54 @@ export default function Home() {
     });
   };
 
+  useEffect(() => {
+    if (!dataSource) return;
+
+    console.log("Starting auto-refresh for:", dataSource);
+
+    const runSelectedSource = async () => {
+      if (dataSource === "Weather") {
+        await triggerWeatherScript();
+      } else if (dataSource === "Day-Night") {
+        await triggerDayNightScript();
+      } else if (dataSource === "Stripe") {
+        await triggerStripeScript();
+      }
+
+      // ALSO publish after fetching
+      await publishSettings();
+    };
+
+    // Run once after Press
+    // runSelectedSource();
+
+    // Run every subsequent 60 seconds
+    const interval = setInterval(runSelectedSource, 60000);
+
+    // Cleanup when switching source
+    return () => {
+      console.log("Stopping auto-refresh for:", dataSource);
+      clearInterval(interval);
+    };
+  }, [dataSource]);
+
+  // let isRunning = false;
+
+  // const runSelectedSource = async () => {
+  //   if (isRunning) return;
+  //   isRunning = true;
+
+  //   try {
+  //     if (dataSource === "Weather") await triggerWeatherScript();
+  //     else if (dataSource === "Day-Night") await triggerDayNightScript();
+  //     else if (dataSource === "Stripe") await triggerStripeScript();
+
+  //     await publishSettings();
+  //   } finally {
+  //     isRunning = false;
+  //   }
+  // };
+
   // Day-Night API trigger
   const triggerDayNightScript = async () => {
     try {
@@ -229,9 +277,22 @@ export default function Home() {
     hapticEnabled,
   ]);
 
+  function getBackgroundClass(source: string) {
+    switch (source) {
+      case "Day-Night":
+        return "bg-blue-100 dark:bg-blue-900";
+      case "Weather":
+        return "bg-green-100 dark:bg-green-900";
+      case "Stripe":
+        return "bg-purple-100 dark:bg-purple-900";
+      default:
+        return "bg-zinc-50 dark:bg-black";
+    }
+  }
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex w-full max-w-3xl flex-col gap-6 py-20 px-16 bg-white dark:bg-black">
+    <div className={`flex min-h-screen items-center justify-center font-sans transition-colors duration-500 ${getBackgroundClass(dataSource)}`}>
+      <main className={`flex w-full max-w-3xl flex-col gap-6 py-20 px-16 transition-colors duration-500 ${getBackgroundClass(dataSource)}`}>
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
         
         {/* Data Source Buttons */}
