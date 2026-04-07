@@ -6,6 +6,7 @@ import time
 from datetime import datetime
 from pathlib import Path
 
+from control_state import load_luminosity
 from mapToCoordinates import countries, states, provinces
 
 
@@ -118,6 +119,7 @@ base_url = "https://api.open-meteo.com/v1/forecast"
 
 weather_data = {
     "type": "Weather",
+    "luminosity": load_luminosity(),
     "data": {}
 }
 

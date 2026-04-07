@@ -3891,6 +3891,7 @@ Payload type: Stripe
 [Publish.py exit] code=0
 Published stripe data via MQTT. points=6
 
+<<<<<<< HEAD
 [2026-03-26T06:55:24] --- stripeEventApp.py start ---
 Stripe payload prepared. points=6
 {"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
@@ -3920,22 +3921,121 @@ Payload type: Weather
 [Instruction build] mode=Weather total=251 valid=251
 [Instruction sample] ['AFG,100,39,255,0', 'ALB,100,113,255,0', 'ALG,100,105,255,0']
 [MQTT publish] topic=/trackpointai/globe/instruction bytes=4402 mid=1 rc=0
+=======
+[2026-03-26T01:13:41] --- weatherEventApp.py start ---
+
+[2026-03-26T01:13:47] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,11,255,0', 'ALB,100,49,255,0', 'ALG,100,23,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4384 mid=1 rc=0
+>>>>>>> 2a6aec2364bf2454c2eb8c4bb0618b5aa5cfe961
 [MQTT ack] topic=/trackpointai/globe/instruction published=True
 [Publish.py stdout]
 Payload type: Weather
 [Config] no control fields in payload, skipping config publish
 [Instruction build] mode=Weather total=251 valid=251
+<<<<<<< HEAD
 [Instruction sample] ['AFG,100,39,255,0', 'ALB,100,113,255,0', 'ALG,100,105,255,0']
 [MQTT publish] topic=/trackpointai/globe/instruction bytes=4402 mid=1 rc=0
+=======
+[Instruction sample] ['AFG,100,11,255,0', 'ALB,100,49,255,0', 'ALG,100,23,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4384 mid=1 rc=0
+>>>>>>> 2a6aec2364bf2454c2eb8c4bb0618b5aa5cfe961
 [MQTT ack] topic=/trackpointai/globe/instruction published=True
 [Publish.py exit] code=0
 Published weather data via MQTT. points=251
 
+<<<<<<< HEAD
 [2026-03-26T06:55:38] --- stripeEventApp.py start ---
 Stripe payload prepared. points=6
 {"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
 
 [2026-03-26T06:55:39] --- Publish.py start ---
+=======
+[2026-03-26T01:14:10] --- weatherEventApp.py start ---
+
+[2026-03-26T01:14:15] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,11,255,0', 'ALB,100,49,255,0', 'ALG,100,23,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4384 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,11,255,0', 'ALB,100,49,255,0', 'ALG,100,23,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4384 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=251
+
+[2026-03-26T01:14:40] --- weatherEventApp.py start ---
+
+[2026-03-26T01:14:45] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,11,255,0', 'ALB,100,49,255,0', 'ALG,100,23,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4384 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,11,255,0', 'ALB,100,49,255,0', 'ALG,100,23,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4384 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=251
+
+[2026-03-26T01:15:10] --- weatherEventApp.py start ---
+
+[2026-03-26T01:15:16] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,15,255,0', 'ALB,100,57,255,0', 'ALG,100,32,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4381 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,15,255,0', 'ALB,100,57,255,0', 'ALG,100,32,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4381 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=251
+
+[2026-03-26T01:15:40] --- weatherEventApp.py start ---
+
+[2026-03-26T01:15:45] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,15,255,0', 'ALB,100,57,255,0', 'ALG,100,32,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4381 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,15,255,0', 'ALB,100,57,255,0', 'ALG,100,32,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4381 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=251
+
+[2026-03-26T01:16:08] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:16:09] --- Publish.py start ---
+>>>>>>> 2a6aec2364bf2454c2eb8c4bb0618b5aa5cfe961
 Payload type: Stripe
 [Config] no control fields in payload, skipping config publish
 [Instruction build] mode=Stripe total=6 valid=6
@@ -3952,11 +4052,38 @@ Payload type: Stripe
 [Publish.py exit] code=0
 Published stripe data via MQTT. points=6
 
+<<<<<<< HEAD
 [2026-03-26T06:56:08] --- stripeEventApp.py start ---
 Stripe payload prepared. points=6
 {"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
 
 [2026-03-26T06:56:09] --- Publish.py start ---
+=======
+[2026-03-26T01:16:15] --- weatherEventApp.py start ---
+
+[2026-03-26T01:16:21] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,15,255,0', 'ALB,100,57,255,0', 'ALG,100,32,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4381 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,15,255,0', 'ALB,100,57,255,0', 'ALG,100,32,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4381 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=251
+
+[2026-03-26T01:16:26] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:16:27] --- Publish.py start ---
+>>>>>>> 2a6aec2364bf2454c2eb8c4bb0618b5aa5cfe961
 Payload type: Stripe
 [Config] no control fields in payload, skipping config publish
 [Instruction build] mode=Stripe total=6 valid=6
@@ -3973,11 +4100,19 @@ Payload type: Stripe
 [Publish.py exit] code=0
 Published stripe data via MQTT. points=6
 
+<<<<<<< HEAD
 [2026-03-26T06:56:38] --- stripeEventApp.py start ---
 Stripe payload prepared. points=6
 {"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
 
 [2026-03-26T06:56:39] --- Publish.py start ---
+=======
+[2026-03-26T01:16:56] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:16:57] --- Publish.py start ---
+>>>>>>> 2a6aec2364bf2454c2eb8c4bb0618b5aa5cfe961
 Payload type: Stripe
 [Config] no control fields in payload, skipping config publish
 [Instruction build] mode=Stripe total=6 valid=6
@@ -3994,25 +4129,2088 @@ Payload type: Stripe
 [Publish.py exit] code=0
 Published stripe data via MQTT. points=6
 
+<<<<<<< HEAD
 [2026-03-26T06:57:08] --- stripeEventApp.py start ---
 Stripe payload prepared. points=6
 {"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
 
 [2026-03-26T06:57:09] --- Publish.py start ---
+=======
+[2026-03-26T01:17:26] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:17:27] --- Publish.py start ---
+>>>>>>> 2a6aec2364bf2454c2eb8c4bb0618b5aa5cfe961
 Payload type: Stripe
 [Config] no control fields in payload, skipping config publish
 [Instruction build] mode=Stripe total=6 valid=6
 [Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
 [MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+<<<<<<< HEAD
 [MQTT ack] topic=/trackpointai/globe/instruction published=False
 [MQTT warn] publish timed out topic=/trackpointai/globe/instruction
+=======
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+>>>>>>> 2a6aec2364bf2454c2eb8c4bb0618b5aa5cfe961
 [Publish.py stdout]
 Payload type: Stripe
 [Config] no control fields in payload, skipping config publish
 [Instruction build] mode=Stripe total=6 valid=6
 [Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
 [MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+<<<<<<< HEAD
 [MQTT ack] topic=/trackpointai/globe/instruction published=False
 [MQTT warn] publish timed out topic=/trackpointai/globe/instruction
+=======
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:17:56] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:17:57] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:18:26] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:18:27] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:18:56] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:18:57] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:19:26] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:19:27] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:19:56] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:19:57] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:20:29] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:20:30] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:20:59] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:20:59] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:21:29] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:21:30] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:21:59] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:21:59] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:22:29] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:22:29] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:22:59] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:22:59] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:23:29] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:23:29] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:23:59] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:24:00] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:24:29] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:24:30] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:25:10] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 8, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:25:11] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,8,0,255,0', 'ARG,8,0,255,0', 'CHL,8,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=90 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,8,0,255,0', 'ARG,8,0,255,0', 'CHL,8,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=90 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:25:24] --- weatherEventApp.py start ---
+
+[2026-03-26T01:25:30] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,13,15,255,0', 'ALB,13,57,255,0', 'ALG,13,32,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4130 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,13,15,255,0', 'ALB,13,57,255,0', 'ALG,13,32,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4130 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=251
+
+[2026-03-26T01:25:34] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 13, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:25:35] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,13,0,255,0', 'ARG,13,0,255,0', 'CHL,13,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,13,0,255,0', 'ARG,13,0,255,0', 'CHL,13,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:25:40] --- weatherEventApp.py start ---
+
+[2026-03-26T01:25:46] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,13,15,255,0', 'ALB,13,57,255,0', 'ALG,13,32,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4130 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,13,15,255,0', 'ALB,13,57,255,0', 'ALG,13,32,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4130 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=251
+
+[2026-03-26T01:25:50] --- dayNightEventApp.py start ---
+[Rate limit] day-night batch rate-limited; skipping retries for this cycle
+[Rate limit] day-night batch rate-limited; skipping retries for this cycle
+[Rate limit] day-night batch rate-limited; skipping retries for this cycle
+[Rate limit] day-night batch rate-limited; skipping retries for this cycle
+
+[2026-03-26T01:25:54] --- Publish.py start ---
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=100 valid=100
+[Instruction sample] ['AFG,13,0,0,150', 'ALB,13,0,0,150', 'ALG,13,0,0,150']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=1548 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=100 valid=100
+[Instruction sample] ['AFG,13,0,0,150', 'ALB,13,0,0,150', 'ALG,13,0,0,150']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=1548 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Day/Night data published to MQTT. points=100
+
+[2026-03-26T01:26:04] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 9, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:26:05] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,9,0,255,0', 'ARG,9,0,255,0', 'CHL,9,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=90 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,9,0,255,0', 'ARG,9,0,255,0', 'CHL,9,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=90 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:26:34] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 9, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:26:35] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,9,0,255,0', 'ARG,9,0,255,0', 'CHL,9,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=90 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,9,0,255,0', 'ARG,9,0,255,0', 'CHL,9,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=90 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:27:04] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 9, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:27:05] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,9,0,255,0', 'ARG,9,0,255,0', 'CHL,9,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=90 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,9,0,255,0', 'ARG,9,0,255,0', 'CHL,9,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=90 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:27:13] --- weatherEventApp.py start ---
+
+[2026-03-26T01:27:19] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,15,255,0', 'ALB,100,57,255,0', 'ALG,100,32,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4381 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,15,255,0', 'ALB,100,57,255,0', 'ALG,100,32,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4381 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=251
+
+[2026-03-26T01:27:22] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 100, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:27:23] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:27:52] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 100, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:27:53] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:28:22] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 100, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:28:22] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+
+[2026-03-26T01:28:24] --- weatherEventApp.py start ---
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:28:29] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,15,255,0', 'ALB,100,57,255,0', 'ALG,100,32,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4381 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,15,255,0', 'ALB,100,57,255,0', 'ALG,100,32,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4381 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=251
+
+[2026-03-26T01:28:53] --- weatherEventApp.py start ---
+
+[2026-03-26T01:28:59] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,15,255,0', 'ALB,100,57,255,0', 'ALG,100,32,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4381 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,15,255,0', 'ALB,100,57,255,0', 'ALG,100,32,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4381 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=251
+
+[2026-03-26T01:29:23] --- weatherEventApp.py start ---
+
+[2026-03-26T01:29:29] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,15,255,0', 'ALB,100,57,255,0', 'ALG,100,32,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4381 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,15,255,0', 'ALB,100,57,255,0', 'ALG,100,32,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4381 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=251
+
+[2026-03-26T01:29:39] --- dayNightEventApp.py start ---
+
+[2026-03-26T01:29:45] --- Publish.py start ---
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=251 valid=251
+[Instruction sample] ['AFG,100,0,0,150', 'ALB,100,0,0,150', 'ALG,100,0,0,150']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4213 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=251 valid=251
+[Instruction sample] ['AFG,100,0,0,150', 'ALB,100,0,0,150', 'ALG,100,0,0,150']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4213 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Day/Night data published to MQTT. points=251
+
+[2026-03-26T01:29:49] --- dayNightEventApp.py start ---
+[Rate limit] day-night batch rate-limited; skipping retries for this cycle
+[Rate limit] day-night batch rate-limited; skipping retries for this cycle
+[Rate limit] day-night batch rate-limited; skipping retries for this cycle
+[Rate limit] day-night batch rate-limited; skipping retries for this cycle
+
+[2026-03-26T01:29:54] --- Publish.py start ---
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=100 valid=100
+[Instruction sample] ['AFG,100,0,0,150', 'ALB,100,0,0,150', 'ALG,100,0,0,150']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=1648 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=100 valid=100
+[Instruction sample] ['AFG,100,0,0,150', 'ALB,100,0,0,150', 'ALG,100,0,0,150']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=1648 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Day/Night data published to MQTT. points=100
+
+[2026-03-26T01:29:57] --- dayNightEventApp.py start ---
+[Rate limit] day-night batch rate-limited; skipping retries for this cycle
+[Rate limit] day-night batch rate-limited; skipping retries for this cycle
+[Rate limit] day-night batch rate-limited; skipping retries for this cycle
+[Rate limit] day-night batch rate-limited; skipping retries for this cycle
+[Rate limit] day-night batch rate-limited; skipping retries for this cycle
+[Rate limit] day-night batch rate-limited; skipping retries for this cycle
+[Cache] using cached day-night data points=100
+
+[2026-03-26T01:30:03] --- Publish.py start ---
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=100 valid=100
+[Instruction sample] ['AFG,100,0,0,150', 'ALB,100,0,0,150', 'ALG,100,0,0,150']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=1648 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=100 valid=100
+[Instruction sample] ['AFG,100,0,0,150', 'ALB,100,0,0,150', 'ALG,100,0,0,150']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=1648 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Day/Night data published to MQTT. points=100
+
+[2026-03-26T01:30:08] --- dayNightEventApp.py start ---
+Batch request attempt 1/4 failed: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=34.5553&latitude=41.3275&latitude=36.7538&latitude=-8.839&latitude=17.1274&latitude=-34.6037&latitude=40.1792&latitude=-35.2809&latitude=48.2082&latitude=40.4093&latitude=25.0443&latitude=26.2285&latitude=23.8103&latitude=13.0975&latitude=53.9006&latitude=50.8503&latitude=17.251&latitude=6.4969&latitude=27.4728&latitude=-16.4897&latitude=43.8563&latitude=-24.6282&latitude=-15.7939&latitude=4.9031&latitude=42.6977&latitude=12.3714&latitude=-3.3731&latitude=11.5564&latitude=3.848&latitude=45.4215&latitude=4.3947&latitude=12.1348&latitude=-33.4489&latitude=39.9042&latitude=4.711&latitude=-11.7172&latitude=-4.2634&latitude=-4.4419&latitude=9.9281&latitude=6.8276&latitude=45.815&latitude=23.1136&latitude=35.1856&latitude=50.0755&latitude=55.6761&latitude=11.8251&latitude=15.3092&latitude=18.4861&latitude=-0.1807&latitude=30.0444&longitude=69.2075&longitude=19.8189&longitude=3.0588&longitude=13.2894&longitude=-61.8468&longitude=-58.3816&longitude=44.4991&longitude=149.13&longitude=16.3738&longitude=49.8671&longitude=-77.3504&longitude=50.586&longitude=90.4125&longitude=-59.6167&longitude=27.559&longitude=4.3517&longitude=-88.759&longitude=2.6289&longitude=89.639&longitude=-68.1193&longitude=18.4131&longitude=25.9231&longitude=-47.8828&longitude=114.9398&longitude=23.3219&longitude=-1.5197&longitude=29.9189&longitude=104.9282&longitude=11.5021&longitude=-75.6972&longitude=18.5582&longitude=15.0557&longitude=-70.6693&longitude=116.4074&longitude=-74.0721&longitude=43.2473&longitude=15.2429&longitude=15.2663&longitude=-84.0907&longitude=-5.2893&longitude=15.9819&longitude=-82.3666&longitude=33.3823&longitude=14.4378&longitude=12.5683&longitude=42.5903&longitude=-61.3794&longitude=-69.9312&longitude=-78.4678&longitude=31.2357&current=is_day (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)'))) | retrying in 1.0s
+
+[2026-03-26T01:30:30] --- Publish.py start ---
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=251 valid=251
+[Instruction sample] ['AFG,100,0,0,150', 'ALB,100,0,0,150', 'ALG,100,0,0,150']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4215 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=251 valid=251
+[Instruction sample] ['AFG,100,0,0,150', 'ALB,100,0,0,150', 'ALG,100,0,0,150']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4215 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Day/Night data published to MQTT. points=251
+
+[2026-03-26T01:30:51] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 93, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:30:52] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,93,0,255,0', 'ARG,93,0,255,0', 'CHL,93,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,93,0,255,0', 'ARG,93,0,255,0', 'CHL,93,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:31:21] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 93, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:31:22] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,93,0,255,0', 'ARG,93,0,255,0', 'CHL,93,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,93,0,255,0', 'ARG,93,0,255,0', 'CHL,93,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:31:49] --- weatherEventApp.py start ---
+
+[2026-03-26T01:31:55] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4382 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4382 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=251
+
+[2026-03-26T01:32:23] --- weatherEventApp.py start ---
+
+[2026-03-26T01:32:29] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4382 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=251 valid=251
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4382 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=251
+
+[2026-03-26T01:32:35] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+
+[2026-03-26T01:32:38] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:35:15] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:35:16] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:36:31] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:36:31] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:36:49] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:36:50] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:37:01] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 100, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:37:01] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:38:03] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:38:04] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:38:13] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:38:14] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:38:17] --- dayNightEventApp.py start ---
+[Rate limit] day-night daily API limit exceeded, stopping fresh fetches
+[Cache] using cached day-night data points=251
+
+[2026-03-26T01:38:18] --- Publish.py start ---
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=251 valid=251
+[Instruction sample] ['AFG,100,0,0,150', 'ALB,100,0,0,150', 'ALG,100,0,0,150']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4215 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=251 valid=251
+[Instruction sample] ['AFG,100,0,0,150', 'ALB,100,0,0,150', 'ALG,100,0,0,150']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4215 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Day/Night data published to MQTT. points=251
+
+[2026-03-26T01:38:26] --- dayNightEventApp.py start ---
+[Rate limit] day-night daily API limit exceeded, stopping fresh fetches
+[Cache] using cached day-night data points=251
+
+[2026-03-26T01:38:27] --- Publish.py start ---
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=251 valid=251
+[Instruction sample] ['AFG,100,0,0,150', 'ALB,100,0,0,150', 'ALG,100,0,0,150']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4215 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=251 valid=251
+[Instruction sample] ['AFG,100,0,0,150', 'ALB,100,0,0,150', 'ALG,100,0,0,150']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4215 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Day/Night data published to MQTT. points=251
+
+[2026-03-26T01:38:35] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:38:36] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:38:45] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:38:46] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:38:51] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 100, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:38:52] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:38:55] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 100, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:38:56] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:38:59] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:38:59] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:39:03] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:39:03] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:39:06] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:39:07] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:40:11] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:40:12] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:40:18] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:40:19] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:40:25] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 4, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:40:26] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,4,0,255,0', 'ARG,4,0,255,0', 'CHL,4,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=90 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,4,0,255,0', 'ARG,4,0,255,0', 'CHL,4,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=90 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:40:38] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 10, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:40:39] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,10,0,255,0', 'ARG,10,0,255,0', 'CHL,10,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,10,0,255,0', 'ARG,10,0,255,0', 'CHL,10,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:40:46] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 10, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:40:47] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,10,0,255,0', 'ARG,10,0,255,0', 'CHL,10,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,10,0,255,0', 'ARG,10,0,255,0', 'CHL,10,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:40:52] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:40:53] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,10,18,255,0', 'ALB,10,64,255,0', 'ALG,10,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2485 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,10,18,255,0', 'ALB,10,64,255,0', 'ALG,10,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2485 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:41:03] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:41:03] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,10,18,255,0', 'ALB,10,64,255,0', 'ALG,10,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2485 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,10,18,255,0', 'ALB,10,64,255,0', 'ALG,10,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2485 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:41:09] --- dayNightEventApp.py start ---
+[Rate limit] day-night daily API limit exceeded, stopping fresh fetches
+[Cache] using cached day-night data points=251
+
+[2026-03-26T01:41:10] --- Publish.py start ---
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=251 valid=251
+[Instruction sample] ['AFG,10,0,0,150', 'ALB,10,0,0,150', 'ALG,10,0,0,150']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=3964 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=251 valid=251
+[Instruction sample] ['AFG,10,0,0,150', 'ALB,10,0,0,150', 'ALG,10,0,0,150']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=3964 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Day/Night data published to MQTT. points=251
+
+[2026-03-26T01:41:17] --- dayNightEventApp.py start ---
+[Rate limit] day-night daily API limit exceeded, stopping fresh fetches
+[Cache] using cached day-night data points=251
+
+[2026-03-26T01:41:18] --- Publish.py start ---
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=251 valid=251
+[Instruction sample] ['AFG,31,0,0,150', 'ALB,31,0,0,150', 'ALG,31,0,0,150']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=3964 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=251 valid=251
+[Instruction sample] ['AFG,31,0,0,150', 'ALB,31,0,0,150', 'ALG,31,0,0,150']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=3964 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Day/Night data published to MQTT. points=251
+
+[2026-03-26T01:41:22] --- dayNightEventApp.py start ---
+[Rate limit] day-night daily API limit exceeded, stopping fresh fetches
+[Cache] using cached day-night data points=251
+
+[2026-03-26T01:41:23] --- Publish.py start ---
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=251 valid=251
+[Instruction sample] ['AFG,52,0,0,150', 'ALB,52,0,0,150', 'ALG,52,0,0,150']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=3964 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=251 valid=251
+[Instruction sample] ['AFG,52,0,0,150', 'ALB,52,0,0,150', 'ALG,52,0,0,150']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=3964 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Day/Night data published to MQTT. points=251
+
+[2026-03-26T01:41:30] --- dayNightEventApp.py start ---
+[Rate limit] day-night daily API limit exceeded, stopping fresh fetches
+[Cache] using cached day-night data points=251
+
+[2026-03-26T01:41:30] --- Publish.py start ---
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=251 valid=251
+[Instruction sample] ['AFG,100,0,0,150', 'ALB,100,0,0,150', 'ALG,100,0,0,150']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4215 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Day-Night
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Day-Night total=251 valid=251
+[Instruction sample] ['AFG,100,0,0,150', 'ALB,100,0,0,150', 'ALG,100,0,0,150']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=4215 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Day/Night data published to MQTT. points=251
+
+[2026-03-26T01:41:35] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:41:36] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:41:39] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 100, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:41:39] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:42:09] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 100, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:42:10] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:42:39] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 100, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:42:39] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:43:09] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 100, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:43:10] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:43:39] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 100, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:43:40] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:43:46] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:43:47] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:44:16] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:44:17] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:44:46] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:44:47] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:45:16] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:45:17] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:45:38] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:45:38] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,47,18,255,0', 'ALB,47,64,255,0', 'ALG,47,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2485 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,47,18,255,0', 'ALB,47,64,255,0', 'ALG,47,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2485 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:45:52] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:45:53] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,47,18,255,0', 'ALB,47,64,255,0', 'ALG,47,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2485 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,47,18,255,0', 'ALB,47,64,255,0', 'ALG,47,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2485 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:45:57] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 47, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:45:58] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,47,0,255,0', 'ARG,47,0,255,0', 'CHL,47,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,47,0,255,0', 'ARG,47,0,255,0', 'CHL,47,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:46:27] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 47, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:46:28] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,47,0,255,0', 'ARG,47,0,255,0', 'CHL,47,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,47,0,255,0', 'ARG,47,0,255,0', 'CHL,47,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:46:57] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 47, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:46:58] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,47,0,255,0', 'ARG,47,0,255,0', 'CHL,47,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,47,0,255,0', 'ARG,47,0,255,0', 'CHL,47,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:47:27] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 47, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:47:28] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,47,0,255,0', 'ARG,47,0,255,0', 'CHL,47,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,47,0,255,0', 'ARG,47,0,255,0', 'CHL,47,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:47:57] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 47, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:47:58] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,47,0,255,0', 'ARG,47,0,255,0', 'CHL,47,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,47,0,255,0', 'ARG,47,0,255,0', 'CHL,47,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:48:27] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 47, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:48:28] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,47,0,255,0', 'ARG,47,0,255,0', 'CHL,47,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,47,0,255,0', 'ARG,47,0,255,0', 'CHL,47,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:48:58] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 47, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:48:58] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,47,0,255,0', 'ARG,47,0,255,0', 'CHL,47,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,47,0,255,0', 'ARG,47,0,255,0', 'CHL,47,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:49:28] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 47, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:49:29] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,47,0,255,0', 'ARG,47,0,255,0', 'CHL,47,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,47,0,255,0', 'ARG,47,0,255,0', 'CHL,47,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:49:30] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:49:31] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:49:54] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:49:55] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:50:24] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:50:25] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:50:54] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:50:55] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:51:24] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:51:25] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:51:54] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:51:55] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:52:24] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:52:25] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:52:54] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:52:55] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:53:25] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:53:25] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:53:55] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:53:55] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:54:12] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:54:13] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:54:42] --- weatherEventApp.py start ---
+[Rate limit] weather daily API limit exceeded, stopping fresh fetches
+[Cache] using cached weather data points=150
+
+[2026-03-26T01:54:43] --- Publish.py start ---
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Weather
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Weather total=150 valid=150
+[Instruction sample] ['AFG,100,18,255,0', 'ALB,100,64,255,0', 'ALG,100,42,255,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=2635 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published weather data via MQTT. points=150
+
+[2026-03-26T01:54:49] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 100, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:54:50] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,100,0,255,0', 'ARG,100,0,255,0', 'CHL,100,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=102 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py exit] code=0
+Published stripe data via MQTT. points=6
+
+[2026-03-26T01:54:53] --- stripeEventApp.py start ---
+Stripe payload prepared. points=6
+{"type": "Stripe", "luminosity": 53, "data": {"GBR": [0, 255, 0], "ARG": [0, 255, 0], "CHL": [255, 165, 0], "PER": [0, 0, 255], "URY": [128, 0, 128], "BOL": [255, 165, 0]}}
+
+[2026-03-26T01:54:54] --- Publish.py start ---
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,53,0,255,0', 'ARG,53,0,255,0', 'CHL,53,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+[Publish.py stdout]
+Payload type: Stripe
+[Config] no control fields in payload, skipping config publish
+[Instruction build] mode=Stripe total=6 valid=6
+[Instruction sample] ['GBR,53,0,255,0', 'ARG,53,0,255,0', 'CHL,53,255,165,0']
+[MQTT publish] topic=/trackpointai/globe/instruction bytes=96 mid=1 rc=0
+[MQTT ack] topic=/trackpointai/globe/instruction published=True
+>>>>>>> 2a6aec2364bf2454c2eb8c4bb0618b5aa5cfe961
 [Publish.py exit] code=0
 Published stripe data via MQTT. points=6

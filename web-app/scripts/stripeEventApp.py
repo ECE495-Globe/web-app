@@ -7,6 +7,7 @@ from pathlib import Path
 from datetime import datetime, timedelta, timezone
 from dotenv import load_dotenv
 
+from control_state import load_luminosity
 from stripeToKey import countries
 
 
@@ -216,6 +217,7 @@ ingest(data)
 
 stripe_data = {
     "type": "Stripe",
+    "luminosity": load_luminosity(),
     "data": aggregate(24*365)
     # "data": {
     #     "daily": aggregate(24),

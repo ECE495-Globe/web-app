@@ -56,9 +56,27 @@ function buildControlStyles({
   return { color, fill, glow, toggleStyle };
 }
 
+type DeviceStatusResponse = {
+  temperature: string;
+  uptime: string;
+  wifiRssi: string;
+  updatedAt: string | null;
+};
+
+type DeviceErrorEntry = {
+  id: string;
+  message: string;
+  source: string;
+  level: string;
+  timestamp: string;
+};
+
 export default function Home() {
   const hasMountedRef = useRef(false);
+  const hasBrightnessMountedRef = useRef(false);
+  const hasLuminosityEnabledMountedRef = useRef(false);
   const isSourceRunInFlightRef = useRef(false);
+  const shouldClearOnNextSourceRunRef = useRef(true);
   const [sourceRefreshNonce, setSourceRefreshNonce] = useState(0);
 
   // Set-up default states for the globe
@@ -73,14 +91,19 @@ export default function Home() {
 
   // Subscribe to Mqtt and pull variables temp and Uptime
   const [uptime, setUptime] = useState("0s");
-  const [temperature, setTemperature] = useState("-- °C");
+  const [deviceErrors, setDeviceErrors] = useState<DeviceErrorEntry[]>([]);
+  const [isErrorLogOpen, setIsErrorLogOpen] = useState(false);
+  const [statusUpdatedAt, setStatusUpdatedAt] = useState<string | null>(null);
+  const [temperature, setTemperature] = useState("-- deg C");
+  const [wifiRssi, setWifiRssi] = useState("-- dBm");
 
   const selectSource = (nextSource: string) => {
+    shouldClearOnNextSourceRunRef.current = true;
     setDataSource(nextSource);
     setSourceRefreshNonce((current) => current + 1);
   };
 
-  const publishSettings = async (options?: { clearInstruction?: boolean }) => {
+  const publishSettings = async (options?: { clearInstruction?: boolean; luminosityEnabledOverride?: boolean }) => {
 
     let direction = 0;
     let speed = rotationEnabled ? Math.abs(rotation) : 0;
@@ -98,6 +121,7 @@ export default function Home() {
         source: dataSource,
         clearInstruction: options?.clearInstruction ?? false,
         luminosity,
+        luminosityEnabled: options?.luminosityEnabledOverride ?? luminosityEnabled,
         speed,
         direction,
         volume,
@@ -107,11 +131,49 @@ export default function Home() {
   };
 
   useEffect(() => {
+    const loadDeviceStatus = async () => {
+      try {
+        const [statusRes, errorsRes] = await Promise.all([
+          fetch("/api/device-status", { cache: "no-store" }),
+          fetch("/api/device-errors", { cache: "no-store" }),
+        ]);
+
+        if (statusRes.ok) {
+          const status = (await statusRes.json()) as DeviceStatusResponse;
+          setTemperature(status.temperature);
+          setUptime(status.uptime);
+          setWifiRssi(status.wifiRssi);
+          setStatusUpdatedAt(status.updatedAt);
+        }
+
+        if (errorsRes.ok) {
+          const payload = (await errorsRes.json()) as { errors?: DeviceErrorEntry[] };
+          setDeviceErrors(Array.isArray(payload.errors) ? payload.errors : []);
+        }
+      } catch (error) {
+        console.error("Error fetching device status:", error);
+      }
+    };
+
+    void loadDeviceStatus();
+    const interval = window.setInterval(loadDeviceStatus, 5000);
+
+    return () => {
+      window.clearInterval(interval);
+    };
+  }, []);
+
+  useEffect(() => {
     if (!dataSource) return;
+
+    if (!luminosityEnabled) {
+      console.log("Auto-refresh paused: brightness is off");
+      return;
+    }
 
     console.log("Starting auto-refresh for:", dataSource);
 
-    const runSelectedSource = async () => {
+    const runSelectedSource = async (clearFirst: boolean) => {
       if (isSourceRunInFlightRef.current) {
         console.log("Skipping source run: previous run still in progress");
         return;
@@ -120,7 +182,9 @@ export default function Home() {
       isSourceRunInFlightRef.current = true;
 
       try {
-        await publishSettings({ clearInstruction: true });
+        if (clearFirst) {
+          await publishSettings({ clearInstruction: true });
+        }
 
         if (dataSource === "Weather") {
           await triggerWeatherScript();
@@ -137,18 +201,22 @@ export default function Home() {
       }
     };
 
-    // Run immediately when source changes
-    void runSelectedSource();
+    // Run immediately when source or brightness mode changes.
+    const clearOnImmediateRun = shouldClearOnNextSourceRunRef.current;
+    shouldClearOnNextSourceRunRef.current = false;
+    void runSelectedSource(clearOnImmediateRun);
 
-    // Run every subsequent 30 seconds
-    const interval = setInterval(runSelectedSource, 30000);
+    // Run every subsequent 30 seconds without clearing first to avoid flashing.
+    const interval = setInterval(() => {
+      void runSelectedSource(false);
+    }, 30000);
 
     // Cleanup when switching source
     return () => {
       console.log("Stopping auto-refresh for:", dataSource);
       clearInterval(interval);
     };
-  }, [dataSource, sourceRefreshNonce]);
+  }, [dataSource, sourceRefreshNonce, luminosityEnabled]);
 
   // let isRunning = false;
 
@@ -214,8 +282,15 @@ export default function Home() {
     setLuminosity(nextValue);
   };
 
-  const toggleLuminosity = () => {
-    setLuminosityEnabled((current) => !current);
+  const toggleLuminosity = async () => {
+    if (luminosityEnabled) {
+      console.log("Brightness turning off, sending blackout before disabling source publishes");
+      await publishSettings({ clearInstruction: true, luminosityEnabledOverride: false });
+      setLuminosityEnabled(false);
+      return;
+    }
+
+    setLuminosityEnabled(true);
   };
 
   const handleVolumeChange = (value: number) => {
@@ -274,6 +349,38 @@ export default function Home() {
   });
 
   useEffect(() => {
+    if (!hasBrightnessMountedRef.current) {
+      hasBrightnessMountedRef.current = true;
+      return;
+    }
+
+    if (!luminosityEnabled) {
+      return;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      console.log("Brightness changed, rerunning current source");
+      shouldClearOnNextSourceRunRef.current = true;
+      setSourceRefreshNonce((current) => current + 1);
+    }, 500);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, [luminosity]);
+
+  useEffect(() => {
+    if (!hasLuminosityEnabledMountedRef.current) {
+      hasLuminosityEnabledMountedRef.current = true;
+      return;
+    }
+
+    console.log("Brightness turned on, rerunning current source");
+    shouldClearOnNextSourceRunRef.current = true;
+    setSourceRefreshNonce((current) => current + 1);
+  }, [luminosityEnabled]);
+
+  useEffect(() => {
     if (!hasMountedRef.current) {
       hasMountedRef.current = true;
       return;
@@ -288,8 +395,6 @@ export default function Home() {
       window.clearTimeout(timeoutId);
     };
   }, [
-    luminosity,
-    luminosityEnabled,
     rotation,
     rotationEnabled,
     volume,
@@ -309,6 +414,10 @@ export default function Home() {
         return "bg-zinc-50 dark:bg-black";
     }
   }
+
+  const formattedStatusUpdatedAt = statusUpdatedAt
+    ? new Date(statusUpdatedAt).toLocaleString()
+    : "Waiting for device update";
 
   return (
     <div className={`flex min-h-screen items-center justify-center font-sans transition-colors duration-500 ${getBackgroundClass(dataSource)}`}>
@@ -541,15 +650,56 @@ export default function Home() {
           <h2 className="text-lg font-semibold">Device Status</h2>
 
           <div className="flex justify-between">
-            <span>Temperature:</span>
-            <span>{temperature}</span>
+            <span>Uptime:</span>
+            <span>{uptime}</span>
           </div>
 
           <div className="flex justify-between">
-            <span>Uptime:</span>
-            <span>{uptime}</span>
-          
+            <span>WiFi RSSI:</span>
+            <span>{wifiRssi}</span>
+          </div>
 
+          <div className="flex justify-between text-sm text-zinc-500">
+            <span>Last Update:</span>
+            <span>{formattedStatusUpdatedAt}</span>
+          </div>
+
+          <div className="mt-3 rounded border border-zinc-300 bg-white/60 dark:border-zinc-700 dark:bg-zinc-950/40">
+            <button
+              type="button"
+              onClick={() => setIsErrorLogOpen((current) => !current)}
+              className="flex w-full items-center justify-between px-3 py-2 text-left"
+            >
+              <span className="font-medium">Device Error Log</span>
+              <span className="text-sm text-zinc-500">
+                {deviceErrors.length} {deviceErrors.length === 1 ? "entry" : "entries"} {isErrorLogOpen ? "Open" : "Closed"}
+              </span>
+            </button>
+
+            {isErrorLogOpen && (
+              <div className="max-h-64 space-y-2 overflow-y-auto border-t border-zinc-300 px-3 py-3 dark:border-zinc-700">
+                {deviceErrors.length === 0 ? (
+                  <div className="rounded border border-dashed border-zinc-300 px-3 py-4 text-sm text-zinc-500 dark:border-zinc-700">
+                    No device errors received.
+                  </div>
+                ) : (
+                  deviceErrors.map((entry) => (
+                    <div key={entry.id} className="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 dark:border-zinc-800 dark:bg-zinc-900">
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="text-sm font-semibold uppercase tracking-wide text-red-600 dark:text-red-400">
+                          {entry.level}
+                        </span>
+                        <span className="text-xs text-zinc-500">
+                          {new Date(entry.timestamp).toLocaleString()}
+                        </span>
+                      </div>
+                      <div className="mt-1 text-sm font-medium">{entry.message}</div>
+                      <div className="mt-1 text-xs text-zinc-500">Source: {entry.source}</div>
+                    </div>
+                  ))
+                )}
+              </div>
+            )}
           </div>
         </div>
         </div>
@@ -558,3 +708,4 @@ export default function Home() {
     </div>
   );
 }
+
