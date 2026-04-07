@@ -42,3 +42,15 @@ next-env.d.ts
 
 # code env config
 .vscode/
+
+# Python cache
+scripts/__pycache__/
+*.pyc
+*.pyo
+
+# Logs
+scripts/logs/
+*.log
+
+# Optional (you clearly have cache files too)
+cache/
