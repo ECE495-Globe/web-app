@@ -17,12 +17,18 @@ From the repository root:
 cd web-app
 ```
 
-### 3. Then install the python dependancies
+### 3. Create a virtual environment
 ```bash
-pip install .
+python -m venv venv
+source venv/bin/activate #This activates the virtual environment
 ```
 
-### 4. Install Node.js Dependancies
+### 4. Install dependancies
+```
+pip install -r requirements.txt
+```
+
+### 5. Install Node.js Dependancies
 Install frontend Dependancies
 ```bash
 npm install
@@ -34,7 +40,7 @@ pnpm install
 bun install
 ```
 
-### 5. Then, run the development server
+### 6. Then, run the development server
 To start the development server run:
 ```bash
 npm run dev
@@ -46,13 +52,13 @@ pnpm dev
 bun dev
 ```
 
-### 6. Open the Application
+### 7. Open the Application
 Open [http://localhost:3000]
 ```
 http://localhost:3000 # with your browser to see the result.
 ```
 
-### 7. If port 3000 is already in use
+### 8. If port 3000 is already in use
 You then have 2 options
 ### Option A, Kill the current process running on the port
 In order to end the process
@@ -65,7 +71,7 @@ kill -9 <PID>
 
 
 ## Stripe Environment Set-Up
-### 8. Changing the stripe API Key
+### 9. Changing the stripe API Key
 In order to properly use the Stripe API for your buisisness you must replace the key in the .env with the one that stripe gives to you
 ```env
 STRIPE_API_KEY=your_stripe_api_key
