@@ -33,6 +33,12 @@ lsof  -i :3000 # Or your differently selected port number
 kill -9 78921 # 78921 is an example number
 ```
 
+## Stripe Environment Set-Up
+### Changing the stripe API Key
+In order to properly use the Stripe API for your buisisness you must replace the key in the .env with the one that stripe gives to you
+
+It is also to be noted that the metadata is heavily relied on and if the invoices are not tagged correctly then the incorrect lights may turn on or may not turn on at all
+
 ## Expanding the Scope
 If you want to expand the scope of this project, you can simply look at the current instantiated:
 Event-app.py scripts
