@@ -1,0 +1,11 @@
+paho-mqtt
+cryptography
+json
+sys
+datetime
+pathlib
+os
+requests
+time
+subprocess
+dotenv
