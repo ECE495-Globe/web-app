@@ -5,6 +5,10 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 In any consol or terminal running on a Linux Machine
 Navigate to the web-app folder
 
+Then install the dependancies using
+```
+pip install .
+```
 
 Then, run the development server:
 
@@ -20,7 +24,7 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-# Note that if the port is busy, you may need to change the port that the website is hosted on or end a process that is running on the port
+### Note that if the port is busy, you may need to change the port that the website is hosted on or end a process that is running on the port
 
 In order to end the process
 ```bash
